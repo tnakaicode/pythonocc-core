@@ -1496,6 +1496,79 @@ None
 	}
 };
 
+/*********************************
+* class StepRepr_MeasureWithUnit *
+*********************************/
+class StepRepr_MeasureWithUnit : public StepData_SelectType {
+	public:
+		/****************** StepRepr_MeasureWithUnit ******************/
+		/**** md5 signature: 6c4400e7ff0582c330b405eaf1a0fe72 ****/
+		%feature("compactdefaultargs") StepRepr_MeasureWithUnit;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepRepr_MeasureWithUnit;
+		 StepRepr_MeasureWithUnit();
+
+		/****************** BasicMeasureWithUnit ******************/
+		/**** md5 signature: 49daacc642092e7228b96a1c035869a5 ****/
+		%feature("compactdefaultargs") BasicMeasureWithUnit;
+		%feature("autodoc", "Returns value as a basicmeasurewithunit (null if another type).
+
+Returns
+-------
+opencascade::handle<StepBasic_MeasureWithUnit>
+") BasicMeasureWithUnit;
+		opencascade::handle<StepBasic_MeasureWithUnit> BasicMeasureWithUnit();
+
+		/****************** CaseNum ******************/
+		/**** md5 signature: f0e39118a9846e44ccd59de148215261 ****/
+		%feature("compactdefaultargs") CaseNum;
+		%feature("autodoc", "Recognizes a kind of measurewithunit select type 1 -> measurewithunit from stepbasic 2 -> measurerepresentationitem from steprepr 3 -> repritemandmeasurewithunit from steprepr 0 else.
+
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
+") CaseNum;
+		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
+
+		/****************** MeasureRepresentationItem ******************/
+		/**** md5 signature: 935340871b120d19ae40bf488305af88 ****/
+		%feature("compactdefaultargs") MeasureRepresentationItem;
+		%feature("autodoc", "Returns value as a measurerepresentationitem (null if another type).
+
+Returns
+-------
+opencascade::handle<StepRepr_MeasureRepresentationItem>
+") MeasureRepresentationItem;
+		opencascade::handle<StepRepr_MeasureRepresentationItem> MeasureRepresentationItem();
+
+		/****************** ReprItemAndMeasureWithUnit ******************/
+		/**** md5 signature: bc869cd3706ed900ffca3d63e001d5e9 ****/
+		%feature("compactdefaultargs") ReprItemAndMeasureWithUnit;
+		%feature("autodoc", "Returns value as a repritemandmeasurewithunit (null if another type).
+
+Returns
+-------
+opencascade::handle<StepRepr_ReprItemAndMeasureWithUnit>
+") ReprItemAndMeasureWithUnit;
+		opencascade::handle<StepRepr_ReprItemAndMeasureWithUnit> ReprItemAndMeasureWithUnit();
+
+};
+
+
+%extend StepRepr_MeasureWithUnit {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
 /********************************
 * class StepRepr_ProductConcept *
 ********************************/

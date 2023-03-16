@@ -68,6 +68,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<StepRepr_MaterialProperty.hxx>
 #include<StepRepr_MaterialPropertyRepresentation.hxx>
 #include<StepRepr_MeasureRepresentationItem.hxx>
+#include<StepRepr_MeasureWithUnit.hxx>
 #include<StepRepr_NextAssemblyUsageOccurrence.hxx>
 #include<StepRepr_ParallelOffset.hxx>
 #include<StepRepr_ParametricRepresentationContext.hxx>
