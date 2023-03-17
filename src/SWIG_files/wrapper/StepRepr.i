@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_steprepr.html"
 #include<TCollection_module.hxx>
 #include<StepData_module.hxx>
 #include<StepBasic_module.hxx>
+#include<StepShape_module.hxx>
 #include<MoniTool_module.hxx>
 #include<TCollection_module.hxx>
 #include<Interface_module.hxx>
@@ -65,6 +66,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_steprepr.html"
 %import TCollection.i
 %import StepData.i
 %import StepBasic.i
+%import StepShape.i
 
 %pythoncode {
 from enum import IntEnum
@@ -145,6 +147,7 @@ from OCC.Core.Exception import *
 %wrap_handle(StepRepr_PromissoryUsageOccurrence)
 %wrap_handle(StepRepr_QuantifiedAssemblyComponentUsage)
 %wrap_handle(StepRepr_ReprItemAndLengthMeasureWithUnit)
+%wrap_handle(StepRepr_ReprItemAndMeasureWithUnitAndQRI)
 %wrap_handle(StepRepr_ReprItemAndPlaneAngleMeasureWithUnit)
 %wrap_handle(StepRepr_RepresentationRelationshipWithTransformation)
 %wrap_handle(StepRepr_SpecifiedHigherUsageOccurrence)
@@ -1499,76 +1502,6 @@ None
 /*********************************
 * class StepRepr_MeasureWithUnit *
 *********************************/
-class StepRepr_MeasureWithUnit : public StepData_SelectType {
-	public:
-		/****************** StepRepr_MeasureWithUnit ******************/
-		/**** md5 signature: 6c4400e7ff0582c330b405eaf1a0fe72 ****/
-		%feature("compactdefaultargs") StepRepr_MeasureWithUnit;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepRepr_MeasureWithUnit;
-		 StepRepr_MeasureWithUnit();
-
-		/****************** BasicMeasureWithUnit ******************/
-		/**** md5 signature: 49daacc642092e7228b96a1c035869a5 ****/
-		%feature("compactdefaultargs") BasicMeasureWithUnit;
-		%feature("autodoc", "Returns value as a basicmeasurewithunit (null if another type).
-
-Returns
--------
-opencascade::handle<StepBasic_MeasureWithUnit>
-") BasicMeasureWithUnit;
-		opencascade::handle<StepBasic_MeasureWithUnit> BasicMeasureWithUnit();
-
-		/****************** CaseNum ******************/
-		/**** md5 signature: f0e39118a9846e44ccd59de148215261 ****/
-		%feature("compactdefaultargs") CaseNum;
-		%feature("autodoc", "Recognizes a kind of measurewithunit select type 1 -> measurewithunit from stepbasic 2 -> measurerepresentationitem from steprepr 3 -> repritemandmeasurewithunit from steprepr 0 else.
-
-Parameters
-----------
-ent: Standard_Transient
-
-Returns
--------
-int
-") CaseNum;
-		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
-
-		/****************** MeasureRepresentationItem ******************/
-		/**** md5 signature: 935340871b120d19ae40bf488305af88 ****/
-		%feature("compactdefaultargs") MeasureRepresentationItem;
-		%feature("autodoc", "Returns value as a measurerepresentationitem (null if another type).
-
-Returns
--------
-opencascade::handle<StepRepr_MeasureRepresentationItem>
-") MeasureRepresentationItem;
-		opencascade::handle<StepRepr_MeasureRepresentationItem> MeasureRepresentationItem();
-
-		/****************** ReprItemAndMeasureWithUnit ******************/
-		/**** md5 signature: bc869cd3706ed900ffca3d63e001d5e9 ****/
-		%feature("compactdefaultargs") ReprItemAndMeasureWithUnit;
-		%feature("autodoc", "Returns value as a repritemandmeasurewithunit (null if another type).
-
-Returns
--------
-opencascade::handle<StepRepr_ReprItemAndMeasureWithUnit>
-") ReprItemAndMeasureWithUnit;
-		opencascade::handle<StepRepr_ReprItemAndMeasureWithUnit> ReprItemAndMeasureWithUnit();
-
-};
-
-
-%extend StepRepr_MeasureWithUnit {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
 /********************************
 * class StepRepr_ProductConcept *
 ********************************/
@@ -5589,6 +5522,73 @@ None
 /**************************************************
 * class StepRepr_ReprItemAndMeasureWithUnitAndQRI *
 **************************************************/
+class StepRepr_ReprItemAndMeasureWithUnitAndQRI : public StepRepr_ReprItemAndMeasureWithUnit {
+	public:
+		/****************** StepRepr_ReprItemAndMeasureWithUnitAndQRI ******************/
+		/**** md5 signature: 82b2897b8147ed7a4bb6522dfae4b8fa ****/
+		%feature("compactdefaultargs") StepRepr_ReprItemAndMeasureWithUnitAndQRI;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepRepr_ReprItemAndMeasureWithUnitAndQRI;
+		 StepRepr_ReprItemAndMeasureWithUnitAndQRI();
+
+		/****************** GetQualifiedRepresentationItem ******************/
+		/**** md5 signature: 8a9356e1e9a7debe4ec9a61981b08d34 ****/
+		%feature("compactdefaultargs") GetQualifiedRepresentationItem;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_QualifiedRepresentationItem>
+") GetQualifiedRepresentationItem;
+		opencascade::handle<StepShape_QualifiedRepresentationItem> GetQualifiedRepresentationItem();
+
+		/****************** Init ******************/
+		/**** md5 signature: 6c43750e18cd19a9516e1c5db864f7bd ****/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMWU: StepBasic_MeasureWithUnit
+aRI: StepRepr_RepresentationItem
+aQRI: StepShape_QualifiedRepresentationItem
+
+Returns
+-------
+None
+") Init;
+		void Init(const opencascade::handle<StepBasic_MeasureWithUnit> & aMWU, const opencascade::handle<StepRepr_RepresentationItem> & aRI, const opencascade::handle<StepShape_QualifiedRepresentationItem> aQRI);
+
+		/****************** SetQualifiedRepresentationItem ******************/
+		/**** md5 signature: e549c31abea9a2400e4fcfc93e85d9e6 ****/
+		%feature("compactdefaultargs") SetQualifiedRepresentationItem;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aQRI: StepShape_QualifiedRepresentationItem
+
+Returns
+-------
+None
+") SetQualifiedRepresentationItem;
+		void SetQualifiedRepresentationItem(const opencascade::handle<StepShape_QualifiedRepresentationItem> & aQRI);
+
+};
+
+
+%make_alias(StepRepr_ReprItemAndMeasureWithUnitAndQRI)
+
+%extend StepRepr_ReprItemAndMeasureWithUnitAndQRI {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
 /******************************************************
 * class StepRepr_ReprItemAndPlaneAngleMeasureWithUnit *
 ******************************************************/
@@ -6085,7 +6085,7 @@ None
 /* python proxy for excluded classes */
 %pythoncode {
 @classnotwrapped
-class StepRepr_ReprItemAndMeasureWithUnitAndQRI:
+class StepRepr_MeasureWithUnit:
 	pass
 
 }
