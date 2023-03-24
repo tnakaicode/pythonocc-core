@@ -52,6 +52,9 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_breptoigesbrep.ht
 #include<IGESBasic_module.hxx>
 #include<IGESGeom_module.hxx>
 #include<Geom_module.hxx>
+#include<Interface_module.hxx>
+#include<Transfer_module.hxx>
+#include<TopTools_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>

@@ -49,7 +49,8 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_igesconvgeom.html
 #include<IGESBasic_module.hxx>
 #include<IGESData_module.hxx>
 #include<Message_module.hxx>
-#include<MoniToolInterface_module.hxx>
+#include<MoniTool_module.hxx>
+#include<Interface_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>

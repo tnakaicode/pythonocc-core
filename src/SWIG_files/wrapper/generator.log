@@ -8,7 +8,7 @@ operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-24 17:05:50.245774
+date : 2023-03-24 17:43:56.566043
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -3456,7 +3456,6 @@ date : 2023-03-24 17:05:50.245774
 [INFO ]  Class: IGESSelect_IGESTypeForm
 [INFO ]  Class: IGESSelect_ModelModifier
 [INFO ]      Class IGESSelect_ModelModifier is abstract, using %nodefaultctor.
-[INFO ]  Class: IGESSelect_SelectBasicGeom
 [INFO ]  Class: IGESSelect_SelectBypassGroup
 [INFO ]  Class: IGESSelect_SelectBypassSubfigure
 [INFO ]  Class: IGESSelect_SelectDrawingFrom
@@ -9699,8 +9698,8 @@ date : 2023-03-24 17:05:50.245774
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 100.13s
+SWIG interface file generation completed in 160.18s
 #################################################
 
-[INFO ]  Number of classes: 5172
-[INFO ]  Number of methods: 50682
+[INFO ]  Number of classes: 5171
+[INFO ]  Number of methods: 50677

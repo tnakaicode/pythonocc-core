@@ -88,7 +88,6 @@ from OCC.Core.Exception import *
 %wrap_handle(IGESSelect_IGESName)
 %wrap_handle(IGESSelect_IGESTypeForm)
 %wrap_handle(IGESSelect_ModelModifier)
-%wrap_handle(IGESSelect_SelectBasicGeom)
 %wrap_handle(IGESSelect_SelectBypassGroup)
 %wrap_handle(IGESSelect_SelectBypassSubfigure)
 %wrap_handle(IGESSelect_SelectDrawingFrom)
@@ -1044,90 +1043,6 @@ None
 /***********************************
 * class IGESSelect_SelectBasicGeom *
 ***********************************/
-class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
-	public:
-		/****************** IGESSelect_SelectBasicGeom ******************/
-		/**** md5 signature: 7c40c09897630668fd618817075c3663 ****/
-		%feature("compactdefaultargs") IGESSelect_SelectBasicGeom;
-		%feature("autodoc", "Creates a selectbasicgeom, which always works recursively mode = -1 : returns surfaces (without trimming) mode = +1 : returns curves 3d (free or bound of surface) mode = +2 : returns basic curves 3d : as 1 but compositecurves are returned in detail mode = 0 : both.
-
-Parameters
-----------
-mode: int
-
-Returns
--------
-None
-") IGESSelect_SelectBasicGeom;
-		 IGESSelect_SelectBasicGeom(const Standard_Integer mode);
-
-		/****************** CurvesOnly ******************/
-		/**** md5 signature: ed7681122dc0a2a8df068e269b46fa00 ****/
-		%feature("compactdefaultargs") CurvesOnly;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") CurvesOnly;
-		Standard_Boolean CurvesOnly();
-
-		/****************** Explore ******************/
-		/**** md5 signature: 50c4444632fd853033919d1a382f1178 ****/
-		%feature("compactdefaultargs") Explore;
-		%feature("autodoc", "Explores an entity, to take its contained curves 3d works recursively.
-
-Parameters
-----------
-level: int
-ent: Standard_Transient
-G: Interface_Graph
-explored: Interface_EntityIterator
-
-Returns
--------
-bool
-") Explore;
-		Standard_Boolean Explore(const Standard_Integer level, const opencascade::handle<Standard_Transient> & ent, const Interface_Graph & G, Interface_EntityIterator & explored);
-
-		/****************** ExploreLabel ******************/
-		/**** md5 signature: 6716492c1a431b7aec766a1b00353622 ****/
-		%feature("compactdefaultargs") ExploreLabel;
-		%feature("autodoc", "Returns a text defining the criterium : 'curves 3d' or 'basic geometry'.
-
-Returns
--------
-TCollection_AsciiString
-") ExploreLabel;
-		TCollection_AsciiString ExploreLabel();
-
-		/****************** SubCurves ******************/
-		/**** md5 signature: b2ef958f443e4c03d44c7588ff08694a ****/
-		%feature("compactdefaultargs") SubCurves;
-		%feature("autodoc", "This method can be called from everywhere to get the curves as sub-elements of a given curve : compositecurve : explored lists its subs + returns true any curve : explored is not filled but returned is true other : returned is false.
-
-Parameters
-----------
-ent: IGESData_IGESEntity
-explored: Interface_EntityIterator
-
-Returns
--------
-bool
-") SubCurves;
-		static Standard_Boolean SubCurves(const opencascade::handle<IGESData_IGESEntity> & ent, Interface_EntityIterator & explored);
-
-};
-
-
-%make_alias(IGESSelect_SelectBasicGeom)
-
-%extend IGESSelect_SelectBasicGeom {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
 /*************************************
 * class IGESSelect_SelectBypassGroup *
 *************************************/
@@ -3611,6 +3526,14 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class IGESSelect_SelectBasicGeom:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */
