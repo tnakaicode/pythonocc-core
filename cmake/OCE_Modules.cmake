@@ -235,8 +235,23 @@ LIST(APPEND OCE_TOOLKIT_DATAEXCHANGE
 	BinMXCAFDoc
 	BinXCAFDrivers
 # TKIGES
+	BRepToIGES
+	BRepToIGESBRep
+	Geom2dToIGES
+	GeomToIGES
+	IGESAppli
+	IGESBasic
 	IGESControl
+	IGESConvGeom
 	IGESData
+	IGESDefs
+	IGESDimen
+	IGESDraw
+	IGESFile
+	IGESGeom
+	IGESGraph
+	IGESSelect
+	IGESSolid
 	IGESToBRep
 # TKRWMesh
 	RWGltf
