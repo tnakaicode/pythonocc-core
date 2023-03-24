@@ -16771,6 +16771,18 @@ float
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class AIS_AnimationAxisRotation:
+	pass
+
+@classnotwrapped
+class AIS_BaseAnimationObject:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */
