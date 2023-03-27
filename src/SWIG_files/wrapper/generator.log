@@ -8,7 +8,7 @@ operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-27 16:46:04.867864
+date : 2023-03-27 17:20:30.091606
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -4278,6 +4278,13 @@ date : 2023-03-27 16:46:04.867864
 [WARNI]      [TypeHint] Skipping type const IMeshData::MapOfInteger &, should contain _
 [WARNI]      [TypeHint] Skipping type const IMeshData::ListOfInteger &, should contain _
 [WARNI]      [TypeHint] Skipping type const IMeshData::MapOfInteger &, should contain _
+[INFO ]  Class: BRepMesh_DefaultRangeSplitter
+[WARNI]      [TypeHint] Skipping type const IMeshData::IFaceHandle &, should contain _
+[WARNI]      [TypeHint] Skip type std::pair<float,, because of trailing :
+[WARNI]      [TypeHint] Skip type std::pair<float,, because of trailing :
+[WARNI]      [TypeHint] Skip type std::pair<float,, because of trailing :
+[WARNI]      [TypeHint] Skip type std::pair<float,, because of trailing :
+[WARNI]      [TypeHint] Skipping type const IMeshData::IFaceHandle &, should contain _
 [INFO ]  Class: BRepMesh_Deflection
 [WARNI]      [TypeHint] Skipping type const IMeshData::IEdgeHandle &, should contain _
 [WARNI]      [TypeHint] Skipping type const IMeshData::IWireHandle &, should contain _
@@ -4361,14 +4368,26 @@ date : 2023-03-27 16:46:04.867864
 [INFO ]  Class: BRepMesh_VertexTool
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [WARNI]      [TypeHint] Skipping type const IMeshData::ListOfInteger &, should contain _
+[INFO ]  Class: BRepMesh_CylinderRangeSplitter
+[WARNI]      [TypeHint] Skipping type const IMeshData::IFaceHandle &, should contain _
 [INFO ]  Class: BRepMesh_Edge
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[INFO ]  Class: BRepMesh_ExtrusionRangeSplitter
 [INFO ]  Class: BRepMesh_IncrementalMesh
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[INFO ]  Class: BRepMesh_UndefinedRangeSplitter
+[INFO ]  Class: BRepMesh_SphereRangeSplitter
+[INFO ]  Class: BRepMesh_UVParamRangeSplitter
+[WARNI]      [TypeHint] Skipping type const IMeshData::IMapOfReal &, should contain _
+[WARNI]      [TypeHint] Skipping type IMeshData::IMapOfReal &, should contain _
+[WARNI]      [TypeHint] Skipping type const IMeshData::IMapOfReal &, should contain _
+[WARNI]      [TypeHint] Skipping type IMeshData::IMapOfReal &, should contain _
+[WARNI]      [TypeHint] Skipping type const IMeshData::IFaceHandle &, should contain _
 [INFO ]  Class: BRepMesh_DelaunayBaseMeshAlgo
+[INFO ]  Class: BRepMesh_NURBSRangeSplitter
+[INFO ]  Class: BRepMesh_TorusRangeSplitter
+[INFO ]  Class: BRepMesh_BoundaryParamsRangeSplitter
 [INFO ]  Class: BRepMesh_DelabellaBaseMeshAlgo
+[INFO ]  Class: BRepMesh_ExtrusionRangeSplitter
+[INFO ]  Class: BRepMesh_UndefinedRangeSplitter
 [INFO ]  ## Processing module BRepMeshData
 [INFO ]  Class: BRepMeshData_Curve
 [INFO ]      skipped method BRepMeshData_Curve::e93fed6728af60627a48bef10a547595
@@ -9663,8 +9682,8 @@ date : 2023-03-27 16:46:04.867864
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 152.63s
+SWIG interface file generation completed in 151.08s
 #################################################
 
-[INFO ]  Number of classes: 5153
-[INFO ]  Number of methods: 50568
+[INFO ]  Number of classes: 5160
+[INFO ]  Number of methods: 50596
