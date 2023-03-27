@@ -100,6 +100,7 @@ option_with_default(PYTHONOCC_WRAP_OCAF "Compile OCE Application Framework wrapp
 option_with_default(SWIG_HIDE_WARNINGS "Check this option if you want a less verbose swig output." ON)
 option_with_default(OCE_HIDE_DEPRECATED "Check this option if you want a less verbose swig output." ON)
 option_with_default(PYTHONOCC_MESHDS_NUMPY "Enable using numpy to speed up mesh data source arrays." OFF)
+option_with_default(PYTHONOCC_WRAP_DRAW "Compile DRAW wrapper" ON)
 
 ############
 # Python 3 #
@@ -365,6 +366,18 @@ if(PYTHONOCC_WRAP_OCAF)
   endforeach(OCE_MODULE)
 endif(PYTHONOCC_WRAP_OCAF)
 
+########
+# DRAW #
+########
+if(PYTHONOCC_WRAP_DRAW)
+  foreach(OCE_MODULE ${OCE_TOOLKIT_DRAW})
+    set(FILE ${SWIG_FILES_PATH}/${OCE_MODULE}.i)
+    set_source_files_properties(${FILE} PROPERTIES CPLUSPLUS ON)
+    swig_add_library(${OCE_MODULE} LANGUAGE python SOURCES ${FILE} TYPE MODULE)
+    swig_link_libraries(${OCE_MODULE} ${OCE_MODEL_LIBRARIES} ${OCE_OCAF_LIBRARIES} Python3::Module)
+  endforeach(OCE_MODULE)
+endif(PYTHONOCC_WRAP_DRAW)
+
 ##########
 # Addons #
 ##########
@@ -435,6 +448,15 @@ if(PYTHONOCC_WRAP_OCAF)
         ${PYTHONOCC_INSTALL_DIRECTORY}/Core)
     endforeach(OCE_MODULE)
 endif(PYTHONOCC_WRAP_OCAF)
+
+if(PYTHONOCC_WRAP_DRAW)
+    foreach(OCE_MODULE ${OCE_TOOLKIT_DRAW})
+        install(FILES ${BUILD_DIR}/${OCE_MODULE}.py DESTINATION ${PYTHONOCC_INSTALL_DIRECTORY}/Core)
+        install(TARGETS _${OCE_MODULE} DESTINATION ${PYTHONOCC_INSTALL_DIRECTORY}/Core)
+        install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/SWIG_files/wrapper/${OCE_MODULE}.pyi DESTINATION 
+        ${PYTHONOCC_INSTALL_DIRECTORY}/Core)
+    endforeach(OCE_MODULE)
+endif(PYTHONOCC_WRAP_DRAW)
 
 # install third part modules
 if(PYTHONOCC_WRAP_VISU)

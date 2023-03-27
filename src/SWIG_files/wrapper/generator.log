@@ -2,13 +2,13 @@
 ############################
 Running pythonocc-generator.
 ############################
-git revision : 2267a85
+git revision : 7b09def
 
 operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-24 17:43:56.566043
+date : 2023-03-27 13:18:20.377783
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -927,41 +927,34 @@ date : 2023-03-24 17:43:56.566043
 [INFO ]  Class: PCDM_StorageDriver
 [INFO ]  ## Processing module UTL
 [INFO ]  Class: UTL
-[INFO ]  Processing toolkit TKExpress ===
-[INFO ]  ## Processing module Express
-[INFO ]  Found HSEQUENCE definitionExpress_HSequenceOfEntity: Express_SequenceOfEntity
-[INFO ]  Found HSEQUENCE definitionExpress_HSequenceOfField: Express_SequenceOfField
-[INFO ]  Found HSEQUENCE definitionExpress_HSequenceOfItem: Express_SequenceOfItem
-[WARNI]      [TypeHint] Skip type TCollection_AsciiString,opencascade::handle, because of trailing :
+[INFO ]  Processing toolkit TKDraw ===
+[INFO ]  ## Processing module DBRep
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
-[WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
-[INFO ]  Class: Express
-[INFO ]  Class: Express_Field
-[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[INFO ]  Class: Express_Item
-[INFO ]      Class Express_Item is abstract, using %nodefaultctor.
-[INFO ]  Enum: GenMode
-[WARNI]      [TypeHint] Skipping type GenMode, should contain _
-[WARNI]      [TypeHint] Skipping type const GenMode, should contain _
-[INFO ]  Class: Express_Schema
-[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[INFO ]  Class: Express_Type
-[INFO ]      Class Express_Type is abstract, using %nodefaultctor.
-[INFO ]  Class: Express_Alias
-[INFO ]  Class: Express_ComplexType
-[INFO ]  Class: Express_Entity
-[INFO ]  Class: Express_Enum
-[INFO ]  Class: Express_NamedType
-[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[INFO ]  Class: Express_PredefinedType
-[INFO ]  Class: Express_Reference
-[INFO ]  Class: Express_Select
-[INFO ]  Class: Express_Boolean
-[INFO ]  Class: Express_Integer
-[INFO ]  Class: Express_Logical
-[INFO ]  Class: Express_Real
-[INFO ]  Class: Express_String
+[INFO ]  Class: DBRep
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[INFO ]  Class: DBRep_DrawableShape
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skip type NCollection_Vector<std::pair<gp_Pnt,, because of trailing :
+[WARNI]      [TypeHint] Skipping type NCollection_DataMap<TopoDS_Face,, seems to be a template
+[WARNI]      [TypeHint] Skip type NCollection_Vector<std::pair<gp_Pnt,, because of trailing :
+[WARNI]      [TypeHint] Skipping type NCollection_DataMap<TopoDS_Face,, seems to be a template
+[INFO ]  Class: DBRep_Edge
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[INFO ]  Class: DBRep_Face
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[INFO ]  Class: DBRep_HideData
+[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
+[INFO ]  Class: DBRep_IsoBuilder
+[INFO ]  Class: DBRep_Params
 [INFO ]  Processing toolkit TKFeat ===
 [INFO ]  ## Processing module BRepFeat
 [INFO ]  Enum: BRepFeat_PerfSelection
@@ -9698,8 +9691,8 @@ date : 2023-03-24 17:43:56.566043
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 160.18s
+SWIG interface file generation completed in 98.68s
 #################################################
 
-[INFO ]  Number of classes: 5171
-[INFO ]  Number of methods: 50677
+[INFO ]  Number of classes: 5160
+[INFO ]  Number of methods: 50629
