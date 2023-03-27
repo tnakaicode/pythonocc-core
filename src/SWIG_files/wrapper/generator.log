@@ -8,7 +8,7 @@ operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-27 13:18:20.377783
+date : 2023-03-27 15:19:00.512408
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -808,11 +808,7 @@ date : 2023-03-27 13:18:20.377783
 [INFO ]  Class: TopOpeBRepTool_face
 [INFO ]  Class: TopOpeBRepTool_makeTransition
 [WARNI]      [TypeHint] param name missing or '&', skip method type hint
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [WARNI]      [TypeHint] param name missing or '&', skip method type hint
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [INFO ]  Processing toolkit TKCAF ===
 [INFO ]  ## Processing module AppStd
 [INFO ]  Class: AppStd_Application
@@ -932,29 +928,92 @@ date : 2023-03-27 13:18:20.377783
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
 [INFO ]  Class: DBRep
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [INFO ]  Class: DBRep_DrawableShape
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [WARNI]      [TypeHint] Skip type NCollection_Vector<std::pair<gp_Pnt,, because of trailing :
 [WARNI]      [TypeHint] Skipping type NCollection_DataMap<TopoDS_Face,, seems to be a template
 [WARNI]      [TypeHint] Skip type NCollection_Vector<std::pair<gp_Pnt,, because of trailing :
 [WARNI]      [TypeHint] Skipping type NCollection_DataMap<TopoDS_Face,, seems to be a template
 [INFO ]  Class: DBRep_Edge
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [INFO ]  Class: DBRep_Face
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [INFO ]  Class: DBRep_HideData
-[WARNI]      [TypeHint] Skipping unknown type, Draw not in module list
 [INFO ]  Class: DBRep_IsoBuilder
 [INFO ]  Class: DBRep_Params
+[INFO ]  ## Processing module Draw
+[INFO ]  Enum: Draw_ColorKind
+[INFO ]  Enum: Draw_MarkerShape
+[INFO ]  Enum: console_semaphore_value
+[WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
+[INFO ]  Class: Draw
+[WARNI]      [TypeHint] Skip type NCollection_Map<opencascade::handle<Draw_Drawable3D>>, because of trailing :
+[INFO ]  Class: Draw_Color
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_Display
+[INFO ]  Class: Draw_Drawable3D
+[INFO ]      Class Draw_Drawable3D is abstract, using %nodefaultctor.
+[WARNI]      [TypeHint] Skipping unknown type, FactoryFunction not in module list
+[INFO ]  Class: Draw_Interpretor
+[INFO ]      Wrap nested class Draw_Interpretor::CallBackData
+[INFO ]      Wrap nested class Draw_Interpretor::CallBackDataFunc
+[INFO ]      Wrap nested class Draw_Interpretor::CallBackDataMethod
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] Skipping type CommandFunction, should contain _
+[WARNI]      [TypeHint] Skipping type CommandFunction, should contain _
+[INFO ]  Class: Draw_Printer
+[INFO ]  Class: Draw_ProgressIndicator
+[INFO ]  Class: Draw_Viewer
+[WARNI]      [TypeHint] Skipping type HWND, should contain _
+[WARNI]      [TypeHint] Skipping type std::ostream &, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] Skipping type const, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[WARNI]      [TypeHint] Skipping type const, should contain _
+[INFO ]  Class: Draw_Window
+[INFO ]      Class Draw_Window is abstract, using %nodefaultctor.
+[INFO ]      Wrap nested class Draw_Window::Draw_XEvent
+[WARNI]      [TypeHint] Skipping type FCallbackBeforeTerminate, should contain _
+[WARNI]      [TypeHint] Skipping type static LRESULT APIENTRY, should contain _
+[WARNI]      [TypeHint] Skipping type HWND, should contain _
+[WARNI]      [TypeHint] Skipping type long &, should contain _
+[WARNI]      [TypeHint] Skipping type HANDLE, should contain _
+[WARNI]      [TypeHint] Skipping type Window, should contain _
+[WARNI]      [TypeHint] Skipping type const long, should contain _
+[WARNI]      [TypeHint] Skipping type FCallbackBeforeTerminate, should contain _
+[WARNI]      [TypeHint] Skipping type HANDLE &, should contain _
+[WARNI]      [TypeHint] Skipping type HANDLE &, should contain _
+[INFO ]  Class: Draw_XSegment
+[WARNI]  Wrong type in class property : NCollection_Vec2
+[INFO ]  Class: Draw_Axis3D
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_Box
+[INFO ]  Class: Draw_Chronometer
+[INFO ]  Class: Draw_Circle3D
+[INFO ]  Class: Draw_Drawable2D
+[INFO ]  Class: Draw_Grid
+[INFO ]  Class: Draw_Marker3D
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_Number
+[INFO ]  Class: Draw_Segment3D
+[INFO ]  Class: Draw_Text3D
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_View
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_Axis2D
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_Circle2D
+[INFO ]  Class: Draw_Marker2D
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[INFO ]  Class: Draw_Segment2D
+[INFO ]  Class: Draw_Text2D
+[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
+[WARNI]      [TypeHint] Skipping type HINSTANCE, should contain _
+[WARNI]      [TypeHint] Skipping type HINSTANCE, should contain _
+[WARNI]      [TypeHint] Skipping unknown type, FDraw not in module list
+[WARNI]      [TypeHint] Skipping unknown type, FDraw not in module list
+[WARNI]      [TypeHint] Skipping type HINSTANCE, should contain _
+[WARNI]      [TypeHint] Skipping type HINSTANCE, should contain _
+[WARNI]      [TypeHint] Skipping type HWND, should contain _
+[WARNI]      [TypeHint] param name missing or '&', skip method type hint
 [INFO ]  Processing toolkit TKFeat ===
 [INFO ]  ## Processing module BRepFeat
 [INFO ]  Enum: BRepFeat_PerfSelection
@@ -9691,8 +9750,8 @@ date : 2023-03-27 13:18:20.377783
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 98.68s
+SWIG interface file generation completed in 100.05s
 #################################################
 
-[INFO ]  Number of classes: 5160
-[INFO ]  Number of methods: 50629
+[INFO ]  Number of classes: 5186
+[INFO ]  Number of methods: 50939

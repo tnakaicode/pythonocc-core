@@ -19,6 +19,7 @@ from OCC.Core.BRepAdaptor import *
 from OCC.Core.TCollection import *
 from OCC.Core.GeomAbs import *
 from OCC.Core.Extrema import *
+from OCC.Core.Draw import *
 
 #the following typedef cannot be wrapped as is
 TopOpeBRepTool_IndexedDataMapOfShapeBox = NewType('TopOpeBRepTool_IndexedDataMapOfShapeBox', Any)

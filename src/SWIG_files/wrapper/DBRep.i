@@ -42,12 +42,22 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_dbrep.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
+#include<Draw_module.hxx>
 #include<TopAbs_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TCollection_module.hxx>
 #include<GeomAbs_module.hxx>
 #include<gp_module.hxx>
 #include<Geom2dHatch_module.hxx>
+#include<Geom2d_module.hxx>
+#include<Geom_module.hxx>
+#include<GeomAdaptor_module.hxx>
+#include<Adaptor2d_module.hxx>
+#include<Adaptor3d_module.hxx>
+#include<Bnd_module.hxx>
+#include<Extrema_module.hxx>
+#include<NCollection_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -55,6 +65,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_dbrep.html"
 %};
 %import Standard.i
 %import NCollection.i
+%import Draw.i
 %import TopAbs.i
 %import TopoDS.i
 %import TCollection.i

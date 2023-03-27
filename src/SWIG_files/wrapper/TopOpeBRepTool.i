@@ -58,6 +58,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_topopebreptool.ht
 #include<TCollection_module.hxx>
 #include<GeomAbs_module.hxx>
 #include<Extrema_module.hxx>
+#include<Draw_module.hxx>
 #include<Geom_module.hxx>
 #include<Adaptor2d_module.hxx>
 #include<Bnd_module.hxx>
@@ -96,6 +97,7 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_topopebreptool.ht
 %import TCollection.i
 %import GeomAbs.i
 %import Extrema.i
+%import Draw.i
 
 %pythoncode {
 from enum import IntEnum
