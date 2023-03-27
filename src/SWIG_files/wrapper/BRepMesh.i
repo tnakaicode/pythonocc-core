@@ -1832,14 +1832,6 @@ bool
 	__repr__ = _dumps_object
 
 	@methodnotwrapped
-	def Frontier(self):
-		pass
-
-	@methodnotwrapped
-	def InternalEdges(self):
-		pass
-
-	@methodnotwrapped
 	def FreeEdges(self):
 		pass
 
@@ -2172,6 +2164,60 @@ void
 /*******************************************
 * class BRepMesh_EdgeTessellationExtractor *
 *******************************************/
+class BRepMesh_EdgeTessellationExtractor : public IMeshTools_CurveTessellator {
+	public:
+		/****************** BRepMesh_EdgeTessellationExtractor ******************/
+		/**** md5 signature: 05d1deb1d7983a1bc146c5070debf9bd ****/
+		%feature("compactdefaultargs") BRepMesh_EdgeTessellationExtractor;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theEdge: IMeshData::IEdgeHandle
+theFace: IMeshData::IFaceHandle
+
+Returns
+-------
+None
+") BRepMesh_EdgeTessellationExtractor;
+		 BRepMesh_EdgeTessellationExtractor(const IMeshData::IEdgeHandle & theEdge, const IMeshData::IFaceHandle & theFace);
+
+		/****************** PointsNb ******************/
+		/**** md5 signature: c7dec7b525c6ed3a148d8633ce567fe8 ****/
+		%feature("compactdefaultargs") PointsNb;
+		%feature("autodoc", "Returns number of tessellation points.
+
+Returns
+-------
+int
+") PointsNb;
+		virtual Standard_Integer PointsNb();
+
+		/****************** Value ******************/
+		/**** md5 signature: 4110d8d1bb060691997a3dfc00ca0b94 ****/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "Returns parameters of solution with the given index. @param theindex index of tessellation point. @param theparameter parameters on pcurve corresponded to the solution. @param thepoint tessellation point. returns true in case of valid result, false elewhere.
+
+Parameters
+----------
+theIndex: int
+thePoint: gp_Pnt
+
+Returns
+-------
+theParameter: float
+") Value;
+		virtual Standard_Boolean Value(const Standard_Integer theIndex, gp_Pnt & thePoint, Standard_Real &OutValue);
+
+};
+
+
+%extend BRepMesh_EdgeTessellationExtractor {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
 /*****************************
 * class BRepMesh_FaceChecker *
 *****************************/
@@ -2367,6 +2413,47 @@ std::pair<int, int>
 ") CellsCount;
 		static std::pair<Standard_Integer, Standard_Integer> CellsCount(const Handle(Adaptor3d_Surface) & theSurface, const Standard_Integer theVerticesNb, const Standard_Real theDeflection, const BRepMesh_DefaultRangeSplitter * theRangeSplitter);
 
+		/****************** IntLinLin ******************/
+		/**** md5 signature: e2953d0dde189ac0d48e66845c4ae790 ****/
+		%feature("compactdefaultargs") IntLinLin;
+		%feature("autodoc", "Checks intersection between two lines defined by two points. @param thestartpnt1 start point of first line. @param theendpnt1 end point of first line. @param thestartpnt2 start point of second line. @param theendpnt2 end point of second line. @param[out] theintpnt point of intersection. @param[out] theparamonsegment parameters of intersection point corresponding to first and second segment. returns status of intersection check.
+
+Parameters
+----------
+theStartPnt1: gp_XY
+theEndPnt1: gp_XY
+theStartPnt2: gp_XY
+theEndPnt2: gp_XY
+theIntPnt: gp_XY
+: float(theParamOnSegment)
+
+Returns
+-------
+IntFlag
+") IntLinLin;
+		static IntFlag IntLinLin(const gp_XY & theStartPnt1, const gp_XY & theEndPnt1, const gp_XY & theStartPnt2, const gp_XY & theEndPnt2, gp_XY & theIntPnt, Standard_Real(&theParamOnSegment) [2]);
+
+		/****************** IntSegSeg ******************/
+		/**** md5 signature: 9efbfbad869a7589f6d4b211dd1b27a2 ****/
+		%feature("compactdefaultargs") IntSegSeg;
+		%feature("autodoc", "Checks intersection between the two segments. checks that intersection point lies within ranges of both segments. @param thestartpnt1 start point of first segment. @param theendpnt1 end point of first segment. @param thestartpnt2 start point of second segment. @param theendpnt2 end point of second segment. @param isconsiderendpointtouch if true endpointtouch status will be returned in case if segments are touching by end points, if false returns nointersection flag. @param isconsiderpointonsegment if true pointonsegment status will be returned in case if end point of one segment lies onto another one, if false returns nointersection flag. @param[out] theintpnt point of intersection. returns status of intersection check.
+
+Parameters
+----------
+theStartPnt1: gp_XY
+theEndPnt1: gp_XY
+theStartPnt2: gp_XY
+theEndPnt2: gp_XY
+isConsiderEndPointTouch: bool
+isConsiderPointOnSegment: bool
+theIntPnt: gp_Pnt2d
+
+Returns
+-------
+IntFlag
+") IntSegSeg;
+		static IntFlag IntSegSeg(const gp_XY & theStartPnt1, const gp_XY & theEndPnt1, const gp_XY & theStartPnt2, const gp_XY & theEndPnt2, const Standard_Boolean isConsiderEndPointTouch, const Standard_Boolean isConsiderPointOnSegment, gp_Pnt2d & theIntPnt);
+
 		/****************** NbPoints ******************/
 		/**** md5 signature: e92014a2f157c195ed77b7745c7eae3f ****/
 		%feature("compactdefaultargs") NbPoints;
@@ -2377,6 +2464,25 @@ Returns
 int
 ") NbPoints;
 		Standard_Integer NbPoints();
+
+		/****************** Normal ******************/
+		/**** md5 signature: cb0bf8ba7f44d8ded12ec50ce5f5d107 ****/
+		%feature("compactdefaultargs") Normal;
+		%feature("autodoc", "@name static api computes normal to the given surface at the specified position in parametric space. @param thesurface surface the normal should be found for. @param theparamu u parameter in parametric space of the surface. @param theparamv v parameter in parametric space of the surface. @param[out] thepoint 3d point corresponding to the given parameters. @param[out] thenormal normal vector at the point specified by the parameters. returns false if the normal can not be computed, true elsewhere.
+
+Parameters
+----------
+theSurface: BRepAdaptor_Surface
+theParamU: float
+theParamV: float
+thePoint: gp_Pnt
+theNormal: gp_Dir
+
+Returns
+-------
+bool
+") Normal;
+		static Standard_Boolean Normal(const opencascade::handle<BRepAdaptor_Surface> & theSurface, const Standard_Real theParamU, const Standard_Real theParamV, gp_Pnt & thePoint, gp_Dir & theNormal);
 
 		/****************** SquareDeflectionOfSegment ******************/
 		/**** md5 signature: bb1429876d80ee455b34cd6dd607d563 ****/
@@ -2437,18 +2543,6 @@ theParam: float
 %extend BRepMesh_GeomTool {
 	%pythoncode {
 	__repr__ = _dumps_object
-
-	@methodnotwrapped
-	def IntLinLin(self):
-		pass
-
-	@methodnotwrapped
-	def Normal(self):
-		pass
-
-	@methodnotwrapped
-	def IntSegSeg(self):
-		pass
 	}
 };
 
@@ -4908,6 +5002,18 @@ None
 /************************************
 * class BRepMesh_CustomBaseMeshAlgo *
 ************************************/
+%nodefaultctor BRepMesh_CustomBaseMeshAlgo;
+class BRepMesh_CustomBaseMeshAlgo : public BRepMesh_ConstrainedBaseMeshAlgo {
+	public:
+};
+
+
+%extend BRepMesh_CustomBaseMeshAlgo {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
 /**************************************
 * class BRepMesh_DelaunayBaseMeshAlgo *
 **************************************/
@@ -5127,23 +5233,7 @@ None
 /* python proxy for excluded classes */
 %pythoncode {
 @classnotwrapped
-class BRepMesh_WireInterferenceChecker:
-	pass
-
-@classnotwrapped
-class BRepMesh_EdgeTessellator:
-	pass
-
-@classnotwrapped
-class BRepMesh_EdgeTessellationExtractor:
-	pass
-
-@classnotwrapped
 class BRepMesh_EdgeParameterProvider:
-	pass
-
-@classnotwrapped
-class BRepMesh_FastDiscret:
 	pass
 
 @classnotwrapped
@@ -5156,10 +5246,6 @@ class BRepMesh_NodeInsertionMeshAlgo:
 
 @classnotwrapped
 class BRepMesh_ConstrainedBaseMeshAlgo:
-	pass
-
-@classnotwrapped
-class BRepMesh_CustomBaseMeshAlgo:
 	pass
 
 @classnotwrapped
