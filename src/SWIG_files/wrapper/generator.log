@@ -8,7 +8,7 @@ operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-27 17:52:54.613483
+date : 2023-03-28 13:07:45.114367
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -498,6 +498,7 @@ date : 2023-03-27 17:52:54.613483
 [INFO ]  Class: BRepAlgo_NormalProjection
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  ## Processing module BRepFill
+[INFO ]  Enum: BRepFill_ThruSectionErrorStatus
 [INFO ]  Enum: BRepFill_TransitionStyle
 [INFO ]  Enum: BRepFill_TypeOfContact
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
@@ -9686,7 +9687,7 @@ date : 2023-03-27 17:52:54.613483
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 129.51s
+SWIG interface file generation completed in 184.60s
 #################################################
 
 [INFO ]  Number of classes: 5162

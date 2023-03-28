@@ -105,6 +105,16 @@ from OCC.Core.Exception import *
 };
 
 /* public enums */
+enum BRepFill_ThruSectionErrorStatus {
+	BRepFill_ThruSectionErrorStatus_Done = 0,
+	BRepFill_ThruSectionErrorStatus_NotDone = 1,
+	BRepFill_ThruSectionErrorStatus_NotSameTopology = 2,
+	BRepFill_ThruSectionErrorStatus_ProfilesInconsistent = 3,
+	BRepFill_ThruSectionErrorStatus_WrongUsage = 4,
+	BRepFill_ThruSectionErrorStatus_Null3DCurve = 5,
+	BRepFill_ThruSectionErrorStatus_Failed = 6,
+};
+
 enum BRepFill_TransitionStyle {
 	BRepFill_Modified = 0,
 	BRepFill_Right = 1,
@@ -121,6 +131,22 @@ enum BRepFill_TypeOfContact {
 
 /* python proxy classes for enums */
 %pythoncode {
+
+class BRepFill_ThruSectionErrorStatus(IntEnum):
+	BRepFill_ThruSectionErrorStatus_Done = 0
+	BRepFill_ThruSectionErrorStatus_NotDone = 1
+	BRepFill_ThruSectionErrorStatus_NotSameTopology = 2
+	BRepFill_ThruSectionErrorStatus_ProfilesInconsistent = 3
+	BRepFill_ThruSectionErrorStatus_WrongUsage = 4
+	BRepFill_ThruSectionErrorStatus_Null3DCurve = 5
+	BRepFill_ThruSectionErrorStatus_Failed = 6
+BRepFill_ThruSectionErrorStatus_Done = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_Done
+BRepFill_ThruSectionErrorStatus_NotDone = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_NotDone
+BRepFill_ThruSectionErrorStatus_NotSameTopology = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_NotSameTopology
+BRepFill_ThruSectionErrorStatus_ProfilesInconsistent = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_ProfilesInconsistent
+BRepFill_ThruSectionErrorStatus_WrongUsage = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_WrongUsage
+BRepFill_ThruSectionErrorStatus_Null3DCurve = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_Null3DCurve
+BRepFill_ThruSectionErrorStatus_Failed = BRepFill_ThruSectionErrorStatus.BRepFill_ThruSectionErrorStatus_Failed
 
 class BRepFill_TransitionStyle(IntEnum):
 	BRepFill_Modified = 0
