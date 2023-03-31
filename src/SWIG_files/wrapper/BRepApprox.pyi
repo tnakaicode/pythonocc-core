@@ -11,8 +11,10 @@ from OCC.Core.Geom2d import *
 from OCC.Core.IntSurf import *
 from OCC.Core.TColStd import *
 from OCC.Core.BRepAdaptor import *
-from OCC.Core.IntImp import *
 from OCC.Core.gp import *
+from OCC.Core.Adaptor3d import *
+from OCC.Core.GeomAbs import *
+from OCC.Core.IntImp import *
 from OCC.Core.ApproxInt import *
 from OCC.Core.TColgp import *
 
@@ -234,6 +236,90 @@ class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox:
     def InverseMatrix(self) -> math_Matrix: ...
     def IsDone(self) -> bool: ...
 
+class BRepApprox_SurfaceTool:
+    @staticmethod
+    def AxeOfRevolution(S: BRepAdaptor_Surface) -> gp_Ax1: ...
+    @staticmethod
+    def BSpline(S: BRepAdaptor_Surface) -> Geom_BSplineSurface: ...
+    @staticmethod
+    def BasisCurve(S: BRepAdaptor_Surface) -> Adaptor3d_Curve: ...
+    @staticmethod
+    def Bezier(S: BRepAdaptor_Surface) -> Geom_BezierSurface: ...
+    @staticmethod
+    def Cone(S: BRepAdaptor_Surface) -> gp_Cone: ...
+    @staticmethod
+    def Cylinder(S: BRepAdaptor_Surface) -> gp_Cylinder: ...
+    @staticmethod
+    def D0(S: BRepAdaptor_Surface, u: float, v: float, P: gp_Pnt) -> None: ...
+    @staticmethod
+    def D1(S: BRepAdaptor_Surface, u: float, v: float, P: gp_Pnt, D1u: gp_Vec, D1v: gp_Vec) -> None: ...
+    @staticmethod
+    def D2(S: BRepAdaptor_Surface, u: float, v: float, P: gp_Pnt, D1U: gp_Vec, D1V: gp_Vec, D2U: gp_Vec, D2V: gp_Vec, D2UV: gp_Vec) -> None: ...
+    @staticmethod
+    def D3(S: BRepAdaptor_Surface, u: float, v: float, P: gp_Pnt, D1U: gp_Vec, D1V: gp_Vec, D2U: gp_Vec, D2V: gp_Vec, D2UV: gp_Vec, D3U: gp_Vec, D3V: gp_Vec, D3UUV: gp_Vec, D3UVV: gp_Vec) -> None: ...
+    @staticmethod
+    def DN(S: BRepAdaptor_Surface, u: float, v: float, Nu: int, Nv: int) -> gp_Vec: ...
+    @staticmethod
+    def Direction(S: BRepAdaptor_Surface) -> gp_Dir: ...
+    @staticmethod
+    def FirstUParameter(S: BRepAdaptor_Surface) -> float: ...
+    @staticmethod
+    def FirstVParameter(S: BRepAdaptor_Surface) -> float: ...
+    @staticmethod
+    def GetType(S: BRepAdaptor_Surface) -> GeomAbs_SurfaceType: ...
+    @staticmethod
+    def IsUClosed(S: BRepAdaptor_Surface) -> bool: ...
+    @staticmethod
+    def IsUPeriodic(S: BRepAdaptor_Surface) -> bool: ...
+    @staticmethod
+    def IsVClosed(S: BRepAdaptor_Surface) -> bool: ...
+    @staticmethod
+    def IsVPeriodic(S: BRepAdaptor_Surface) -> bool: ...
+    @staticmethod
+    def LastUParameter(S: BRepAdaptor_Surface) -> float: ...
+    @staticmethod
+    def LastVParameter(S: BRepAdaptor_Surface) -> float: ...
+    @overload
+    @staticmethod
+    def NbSamplesU(S: BRepAdaptor_Surface) -> int: ...
+    @overload
+    @staticmethod
+    def NbSamplesU(S: BRepAdaptor_Surface, u1: float, u2: float) -> int: ...
+    @overload
+    @staticmethod
+    def NbSamplesV(S: BRepAdaptor_Surface) -> int: ...
+    @overload
+    @staticmethod
+    def NbSamplesV(S: BRepAdaptor_Surface, v1: float, v2: float) -> int: ...
+    @staticmethod
+    def NbUIntervals(S: BRepAdaptor_Surface, Sh: GeomAbs_Shape) -> int: ...
+    @staticmethod
+    def NbVIntervals(S: BRepAdaptor_Surface, Sh: GeomAbs_Shape) -> int: ...
+    @staticmethod
+    def Plane(S: BRepAdaptor_Surface) -> gp_Pln: ...
+    @staticmethod
+    def Sphere(S: BRepAdaptor_Surface) -> gp_Sphere: ...
+    @staticmethod
+    def Torus(S: BRepAdaptor_Surface) -> gp_Torus: ...
+    @staticmethod
+    def UIntervals(S: BRepAdaptor_Surface, T: TColStd_Array1OfReal, Sh: GeomAbs_Shape) -> None: ...
+    @staticmethod
+    def UPeriod(S: BRepAdaptor_Surface) -> float: ...
+    @staticmethod
+    def UResolution(S: BRepAdaptor_Surface, R3d: float) -> float: ...
+    @staticmethod
+    def UTrim(S: BRepAdaptor_Surface, First: float, Last: float, Tol: float) -> Adaptor3d_Surface: ...
+    @staticmethod
+    def VIntervals(S: BRepAdaptor_Surface, T: TColStd_Array1OfReal, Sh: GeomAbs_Shape) -> None: ...
+    @staticmethod
+    def VPeriod(S: BRepAdaptor_Surface) -> float: ...
+    @staticmethod
+    def VResolution(S: BRepAdaptor_Surface, R3d: float) -> float: ...
+    @staticmethod
+    def VTrim(S: BRepAdaptor_Surface, First: float, Last: float, Tol: float) -> Adaptor3d_Surface: ...
+    @staticmethod
+    def Value(S: BRepAdaptor_Surface, u: float, v: float) -> gp_Pnt: ...
+
 class BRepApprox_TheComputeLineBezierOfApprox:
     @overload
     def __init__(self, Line: BRepApprox_TheMultiLineOfApprox, degreemin: Optional[int] = 4, degreemax: Optional[int] = 8, Tolerance3d: Optional[float] = 1.0e-3, Tolerance2d: Optional[float] = 1.0e-6, NbIterations: Optional[int] = 5, cutting: Optional[bool] = True, parametrization: Optional[Approx_ParametrizationType] = Approx_ChordLength, Squares: Optional[bool] = False) -> None: ...
@@ -446,6 +532,45 @@ class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(math_FunctionSetWith
 # hsequence classes
 
 BRepApprox_Approx_Parameters = BRepApprox_Approx.Parameters
+BRepApprox_SurfaceTool_AxeOfRevolution = BRepApprox_SurfaceTool.AxeOfRevolution
+BRepApprox_SurfaceTool_BSpline = BRepApprox_SurfaceTool.BSpline
+BRepApprox_SurfaceTool_BasisCurve = BRepApprox_SurfaceTool.BasisCurve
+BRepApprox_SurfaceTool_Bezier = BRepApprox_SurfaceTool.Bezier
+BRepApprox_SurfaceTool_Cone = BRepApprox_SurfaceTool.Cone
+BRepApprox_SurfaceTool_Cylinder = BRepApprox_SurfaceTool.Cylinder
+BRepApprox_SurfaceTool_D0 = BRepApprox_SurfaceTool.D0
+BRepApprox_SurfaceTool_D1 = BRepApprox_SurfaceTool.D1
+BRepApprox_SurfaceTool_D2 = BRepApprox_SurfaceTool.D2
+BRepApprox_SurfaceTool_D3 = BRepApprox_SurfaceTool.D3
+BRepApprox_SurfaceTool_DN = BRepApprox_SurfaceTool.DN
+BRepApprox_SurfaceTool_Direction = BRepApprox_SurfaceTool.Direction
+BRepApprox_SurfaceTool_FirstUParameter = BRepApprox_SurfaceTool.FirstUParameter
+BRepApprox_SurfaceTool_FirstVParameter = BRepApprox_SurfaceTool.FirstVParameter
+BRepApprox_SurfaceTool_GetType = BRepApprox_SurfaceTool.GetType
+BRepApprox_SurfaceTool_IsUClosed = BRepApprox_SurfaceTool.IsUClosed
+BRepApprox_SurfaceTool_IsUPeriodic = BRepApprox_SurfaceTool.IsUPeriodic
+BRepApprox_SurfaceTool_IsVClosed = BRepApprox_SurfaceTool.IsVClosed
+BRepApprox_SurfaceTool_IsVPeriodic = BRepApprox_SurfaceTool.IsVPeriodic
+BRepApprox_SurfaceTool_LastUParameter = BRepApprox_SurfaceTool.LastUParameter
+BRepApprox_SurfaceTool_LastVParameter = BRepApprox_SurfaceTool.LastVParameter
+BRepApprox_SurfaceTool_NbSamplesU = BRepApprox_SurfaceTool.NbSamplesU
+BRepApprox_SurfaceTool_NbSamplesU = BRepApprox_SurfaceTool.NbSamplesU
+BRepApprox_SurfaceTool_NbSamplesV = BRepApprox_SurfaceTool.NbSamplesV
+BRepApprox_SurfaceTool_NbSamplesV = BRepApprox_SurfaceTool.NbSamplesV
+BRepApprox_SurfaceTool_NbUIntervals = BRepApprox_SurfaceTool.NbUIntervals
+BRepApprox_SurfaceTool_NbVIntervals = BRepApprox_SurfaceTool.NbVIntervals
+BRepApprox_SurfaceTool_Plane = BRepApprox_SurfaceTool.Plane
+BRepApprox_SurfaceTool_Sphere = BRepApprox_SurfaceTool.Sphere
+BRepApprox_SurfaceTool_Torus = BRepApprox_SurfaceTool.Torus
+BRepApprox_SurfaceTool_UIntervals = BRepApprox_SurfaceTool.UIntervals
+BRepApprox_SurfaceTool_UPeriod = BRepApprox_SurfaceTool.UPeriod
+BRepApprox_SurfaceTool_UResolution = BRepApprox_SurfaceTool.UResolution
+BRepApprox_SurfaceTool_UTrim = BRepApprox_SurfaceTool.UTrim
+BRepApprox_SurfaceTool_VIntervals = BRepApprox_SurfaceTool.VIntervals
+BRepApprox_SurfaceTool_VPeriod = BRepApprox_SurfaceTool.VPeriod
+BRepApprox_SurfaceTool_VResolution = BRepApprox_SurfaceTool.VResolution
+BRepApprox_SurfaceTool_VTrim = BRepApprox_SurfaceTool.VTrim
+BRepApprox_SurfaceTool_Value = BRepApprox_SurfaceTool.Value
 BRepApprox_TheMultiLineToolOfApprox_Curvature = BRepApprox_TheMultiLineToolOfApprox.Curvature
 BRepApprox_TheMultiLineToolOfApprox_Curvature = BRepApprox_TheMultiLineToolOfApprox.Curvature
 BRepApprox_TheMultiLineToolOfApprox_Curvature = BRepApprox_TheMultiLineToolOfApprox.Curvature

@@ -1159,6 +1159,7 @@ Aspect_XRTrackedDeviceRole_Other = Aspect_XRTrackedDeviceRole.Aspect_XRTrackedDe
 /* handles */
 %wrap_handle(Aspect_DisplayConnection)
 %wrap_handle(Aspect_Grid)
+%wrap_handle(Aspect_VKeySet)
 %wrap_handle(Aspect_Window)
 %wrap_handle(Aspect_XRAction)
 %wrap_handle(Aspect_XRActionSet)
@@ -2203,6 +2204,212 @@ None
 
 
 %extend Aspect_TrackedDevicePose {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/***********************
+* class Aspect_VKeySet *
+***********************/
+class Aspect_VKeySet : public Standard_Transient {
+	public:
+		class KeyState {};
+		/****************** Aspect_VKeySet ******************/
+		/**** md5 signature: 8566e8fc57970db201c78c2232c80056 ****/
+		%feature("compactdefaultargs") Aspect_VKeySet;
+		%feature("autodoc", "Main constructor.
+
+Returns
+-------
+None
+") Aspect_VKeySet;
+		 Aspect_VKeySet();
+
+		/****************** DownTime ******************/
+		/**** md5 signature: 3ce4407cc0d1bbc0d6555aa3d5a3e2b0 ****/
+		%feature("compactdefaultargs") DownTime;
+		%feature("autodoc", "Return timestamp of press event.
+
+Parameters
+----------
+theKey: Aspect_VKey
+
+Returns
+-------
+double
+") DownTime;
+		double DownTime(Aspect_VKey theKey);
+
+		/****************** HoldDuration ******************/
+		/**** md5 signature: d3a6b36f0626be624be57b5a073be7fd ****/
+		%feature("compactdefaultargs") HoldDuration;
+		%feature("autodoc", "Return duration of the button in pressed state. @param thekey key to check @param thetime current time (for computing duration from key down time) @param theduration key press duration returns true if key was in pressed state.
+
+Parameters
+----------
+theKey: Aspect_VKey
+theTime: double
+
+Returns
+-------
+theDuration: double
+") HoldDuration;
+		bool HoldDuration(Aspect_VKey theKey, double theTime, Standard_Real &OutValue);
+
+		/****************** HoldDuration ******************/
+		/**** md5 signature: c1573ef0fa9ba2fd5946552e14276981 ****/
+		%feature("compactdefaultargs") HoldDuration;
+		%feature("autodoc", "Return duration of the button in pressed state. @param thekey key to check @param thetime current time (for computing duration from key down time) @param theduration key press duration @param thepressure key pressure returns true if key was in pressed state.
+
+Parameters
+----------
+theKey: Aspect_VKey
+theTime: double
+
+Returns
+-------
+theDuration: double
+thePressure: double
+") HoldDuration;
+		bool HoldDuration(Aspect_VKey theKey, double theTime, Standard_Real &OutValue, Standard_Real &OutValue);
+
+		/****************** IsFreeKey ******************/
+		/**** md5 signature: bbd218ecf93898ecf459b9331a00f136 ****/
+		%feature("compactdefaultargs") IsFreeKey;
+		%feature("autodoc", "Return true if key is in free state.
+
+Parameters
+----------
+theKey: Aspect_VKey
+
+Returns
+-------
+bool
+") IsFreeKey;
+		bool IsFreeKey(Aspect_VKey theKey);
+
+		/****************** IsKeyDown ******************/
+		/**** md5 signature: 1c60f9b4e5ebb4fb8f0fb2113d64b286 ****/
+		%feature("compactdefaultargs") IsKeyDown;
+		%feature("autodoc", "Return true if key is in pressed state.
+
+Parameters
+----------
+theKey: Aspect_VKey
+
+Returns
+-------
+bool
+") IsKeyDown;
+		bool IsKeyDown(Aspect_VKey theKey);
+
+		/****************** KeyDown ******************/
+		/**** md5 signature: 3009abb37f57f319280f9ae379b163aa ****/
+		%feature("compactdefaultargs") KeyDown;
+		%feature("autodoc", "Press key. @param thekey key pressed @param thetime event timestamp.
+
+Parameters
+----------
+theKey: Aspect_VKey
+theTime: double
+thePressure: double,optional
+	default value is 1.0
+
+Returns
+-------
+None
+") KeyDown;
+		void KeyDown(Aspect_VKey theKey, double theTime, double thePressure = 1.0);
+
+		/****************** KeyFromAxis ******************/
+		/**** md5 signature: 3db941cede9d9409a6324a91a2be5069 ****/
+		%feature("compactdefaultargs") KeyFromAxis;
+		%feature("autodoc", "Simulate key up/down events from axis value.
+
+Parameters
+----------
+theNegative: Aspect_VKey
+thePositive: Aspect_VKey
+theTime: double
+thePressure: double
+
+Returns
+-------
+None
+") KeyFromAxis;
+		void KeyFromAxis(Aspect_VKey theNegative, Aspect_VKey thePositive, double theTime, double thePressure);
+
+		/****************** KeyUp ******************/
+		/**** md5 signature: d12e8a77599562d728d7ebfb35b14614 ****/
+		%feature("compactdefaultargs") KeyUp;
+		%feature("autodoc", "Release key. @param thekey key pressed @param thetime event timestamp.
+
+Parameters
+----------
+theKey: Aspect_VKey
+theTime: double
+
+Returns
+-------
+None
+") KeyUp;
+		void KeyUp(Aspect_VKey theKey, double theTime);
+
+		/****************** Modifiers ******************/
+		/**** md5 signature: a988577c8f2d9e201ff486761a6a056b ****/
+		%feature("compactdefaultargs") Modifiers;
+		%feature("autodoc", "Return active modifiers.
+
+Returns
+-------
+Aspect_VKeyFlags
+") Modifiers;
+		Aspect_VKeyFlags Modifiers();
+
+		/****************** Mutex ******************/
+		/**** md5 signature: 902e13b2343e132a88f2b4c5433ad6d8 ****/
+		%feature("compactdefaultargs") Mutex;
+		%feature("autodoc", "Return mutex for thread-safe updates. all operations in class implicitly locks this mutex, so this method could be used only for batch processing of keys.
+
+Returns
+-------
+Standard_Mutex
+") Mutex;
+		Standard_Mutex & Mutex();
+
+		/****************** Reset ******************/
+		/**** md5 signature: 7beb446fe26b948f797f8de87e46c23d ****/
+		%feature("compactdefaultargs") Reset;
+		%feature("autodoc", "Reset the key state into unpressed state.
+
+Returns
+-------
+None
+") Reset;
+		void Reset();
+
+		/****************** TimeUp ******************/
+		/**** md5 signature: 4131ea8db309e72b20edf20cb930f105 ****/
+		%feature("compactdefaultargs") TimeUp;
+		%feature("autodoc", "Return timestamp of release event.
+
+Parameters
+----------
+theKey: Aspect_VKey
+
+Returns
+-------
+double
+") TimeUp;
+		double TimeUp(Aspect_VKey theKey);
+
+};
+
+
+%make_alias(Aspect_VKeySet)
+
+%extend Aspect_VKeySet {
 	%pythoncode {
 	__repr__ = _dumps_object
 	}

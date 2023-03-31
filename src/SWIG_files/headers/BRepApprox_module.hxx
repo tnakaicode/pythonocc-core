@@ -35,6 +35,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox.hxx>
 #include<BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox.hxx>
 #include<BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox.hxx>
+#include<BRepApprox_SurfaceTool.hxx>
 #include<BRepApprox_TheComputeLineBezierOfApprox.hxx>
 #include<BRepApprox_TheComputeLineOfApprox.hxx>
 #include<BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox.hxx>

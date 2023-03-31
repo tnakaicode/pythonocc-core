@@ -48,10 +48,10 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_steptotopods.html
 #include<TCollection_module.hxx>
 #include<Geom_module.hxx>
 #include<TopoDS_module.hxx>
-#include<gp_module.hxx>
 #include<Transfer_module.hxx>
-#include<Message_module.hxx>
 #include<Geom2d_module.hxx>
+#include<gp_module.hxx>
+#include<Message_module.hxx>
 #include<StepVisual_module.hxx>
 #include<Message_module.hxx>
 #include<StepBasic_module.hxx>
@@ -75,10 +75,10 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_steptotopods.html
 %import TCollection.i
 %import Geom.i
 %import TopoDS.i
-%import gp.i
 %import Transfer.i
-%import Message.i
 %import Geom2d.i
+%import gp.i
+%import Message.i
 %import StepVisual.i
 
 %pythoncode {
@@ -914,6 +914,404 @@ None
 
 
 %extend StepToTopoDS_Root {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/**************************
+* class StepToTopoDS_Tool *
+**************************/
+class StepToTopoDS_Tool {
+	public:
+		/****************** StepToTopoDS_Tool ******************/
+		/**** md5 signature: 37ddd00f4f3d89e89568df64cb1766ae ****/
+		%feature("compactdefaultargs") StepToTopoDS_Tool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepToTopoDS_Tool;
+		 StepToTopoDS_Tool();
+
+		/****************** StepToTopoDS_Tool ******************/
+		/**** md5 signature: 0e3019727b994e205f600dbbfb87a9d4 ****/
+		%feature("compactdefaultargs") StepToTopoDS_Tool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Map: StepToTopoDS_DataMapOfTRI
+TP: Transfer_TransientProcess
+
+Returns
+-------
+None
+") StepToTopoDS_Tool;
+		 StepToTopoDS_Tool(const StepToTopoDS_DataMapOfTRI & Map, const opencascade::handle<Transfer_TransientProcess> & TP);
+
+		/****************** AddContinuity ******************/
+		/**** md5 signature: 6bd98ccfa80e29978afa53b8e5391289 ****/
+		%feature("compactdefaultargs") AddContinuity;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GeomSurf: Geom_Surface
+
+Returns
+-------
+None
+") AddContinuity;
+		void AddContinuity(const opencascade::handle<Geom_Surface> & GeomSurf);
+
+		/****************** AddContinuity ******************/
+		/**** md5 signature: 3dd755d2e434fd84b1e8ddbfa6b02515 ****/
+		%feature("compactdefaultargs") AddContinuity;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GeomCurve: Geom_Curve
+
+Returns
+-------
+None
+") AddContinuity;
+		void AddContinuity(const opencascade::handle<Geom_Curve> & GeomCurve);
+
+		/****************** AddContinuity ******************/
+		/**** md5 signature: b35c992d7d0bafabfc21330d79f4392c ****/
+		%feature("compactdefaultargs") AddContinuity;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GeomCur2d: Geom2d_Curve
+
+Returns
+-------
+None
+") AddContinuity;
+		void AddContinuity(const opencascade::handle<Geom2d_Curve> & GeomCur2d);
+
+		/****************** Bind ******************/
+		/**** md5 signature: 26d0bd5a0067d6f22f22bb4a056e4a27 ****/
+		%feature("compactdefaultargs") Bind;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TRI: StepShape_TopologicalRepresentationItem
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") Bind;
+		void Bind(const opencascade::handle<StepShape_TopologicalRepresentationItem> & TRI, const TopoDS_Shape & S);
+
+		/****************** BindEdge ******************/
+		/**** md5 signature: 6bbff798f80940386071b572b53645bb ****/
+		%feature("compactdefaultargs") BindEdge;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PP: StepToTopoDS_PointPair
+E: TopoDS_Edge
+
+Returns
+-------
+None
+") BindEdge;
+		void BindEdge(const StepToTopoDS_PointPair & PP, const TopoDS_Edge & E);
+
+		/****************** BindVertex ******************/
+		/**** md5 signature: 8cf1569a233a895e015a7bc9d0c12abc ****/
+		%feature("compactdefaultargs") BindVertex;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: StepGeom_CartesianPoint
+V: TopoDS_Vertex
+
+Returns
+-------
+None
+") BindVertex;
+		void BindVertex(const opencascade::handle<StepGeom_CartesianPoint> & P, const TopoDS_Vertex & V);
+
+		/****************** C0Cur2 ******************/
+		/**** md5 signature: 9a3c8d2a52e73c10476694616729c501 ****/
+		%feature("compactdefaultargs") C0Cur2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C0Cur2;
+		Standard_Integer C0Cur2();
+
+		/****************** C0Cur3 ******************/
+		/**** md5 signature: 4b70fd03acd100a17ceac3467f643b9f ****/
+		%feature("compactdefaultargs") C0Cur3;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C0Cur3;
+		Standard_Integer C0Cur3();
+
+		/****************** C0Surf ******************/
+		/**** md5 signature: 1d1f443b87aa9f4c8fdaca9dcd415125 ****/
+		%feature("compactdefaultargs") C0Surf;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C0Surf;
+		Standard_Integer C0Surf();
+
+		/****************** C1Cur2 ******************/
+		/**** md5 signature: 5165103cea6ca16472978a608fac6da2 ****/
+		%feature("compactdefaultargs") C1Cur2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C1Cur2;
+		Standard_Integer C1Cur2();
+
+		/****************** C1Cur3 ******************/
+		/**** md5 signature: ed9f826927d7d364767f1dc6cd6dbedb ****/
+		%feature("compactdefaultargs") C1Cur3;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C1Cur3;
+		Standard_Integer C1Cur3();
+
+		/****************** C1Surf ******************/
+		/**** md5 signature: c3dd392675d3c9f4bd535e84e79bfed0 ****/
+		%feature("compactdefaultargs") C1Surf;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C1Surf;
+		Standard_Integer C1Surf();
+
+		/****************** C2Cur2 ******************/
+		/**** md5 signature: 33bfbc0a9b43a47d4de6aae761d4bfcd ****/
+		%feature("compactdefaultargs") C2Cur2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C2Cur2;
+		Standard_Integer C2Cur2();
+
+		/****************** C2Cur3 ******************/
+		/**** md5 signature: 5ea4af3965ebfad4d7252ae1d29b610c ****/
+		%feature("compactdefaultargs") C2Cur3;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C2Cur3;
+		Standard_Integer C2Cur3();
+
+		/****************** C2Surf ******************/
+		/**** md5 signature: 44c8e649ffd1799e17d180e6d1c0a50b ****/
+		%feature("compactdefaultargs") C2Surf;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") C2Surf;
+		Standard_Integer C2Surf();
+
+		/****************** ClearEdgeMap ******************/
+		/**** md5 signature: df4ff618308a41b0936dbfff4eb45a43 ****/
+		%feature("compactdefaultargs") ClearEdgeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ClearEdgeMap;
+		void ClearEdgeMap();
+
+		/****************** ClearVertexMap ******************/
+		/**** md5 signature: 4532b934dfe6cbf1bf08d3c04bf6a888 ****/
+		%feature("compactdefaultargs") ClearVertexMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ClearVertexMap;
+		void ClearVertexMap();
+
+		/****************** ComputePCurve ******************/
+		/**** md5 signature: 7b637da529b500d53a5464e6f1fbd737 ****/
+		%feature("compactdefaultargs") ComputePCurve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
+") ComputePCurve;
+		void ComputePCurve(const Standard_Boolean B);
+
+		/****************** ComputePCurve ******************/
+		/**** md5 signature: 74d11cdda39e479e1084d7acd1e233ab ****/
+		%feature("compactdefaultargs") ComputePCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") ComputePCurve;
+		Standard_Boolean ComputePCurve();
+
+		/****************** Find ******************/
+		/**** md5 signature: 07990a09985772dd69645bed88d612b9 ****/
+		%feature("compactdefaultargs") Find;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TRI: StepShape_TopologicalRepresentationItem
+
+Returns
+-------
+TopoDS_Shape
+") Find;
+		const TopoDS_Shape Find(const opencascade::handle<StepShape_TopologicalRepresentationItem> & TRI);
+
+		/****************** FindEdge ******************/
+		/**** md5 signature: b8111e1d4706b5ae6529116af61f4855 ****/
+		%feature("compactdefaultargs") FindEdge;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PP: StepToTopoDS_PointPair
+
+Returns
+-------
+TopoDS_Edge
+") FindEdge;
+		const TopoDS_Edge FindEdge(const StepToTopoDS_PointPair & PP);
+
+		/****************** FindVertex ******************/
+		/**** md5 signature: fa6b0cae3dc78456dca625eec6293582 ****/
+		%feature("compactdefaultargs") FindVertex;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: StepGeom_CartesianPoint
+
+Returns
+-------
+TopoDS_Vertex
+") FindVertex;
+		const TopoDS_Vertex FindVertex(const opencascade::handle<StepGeom_CartesianPoint> & P);
+
+		/****************** Init ******************/
+		/**** md5 signature: 38779a42bc009839efb56b7c461bec15 ****/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Map: StepToTopoDS_DataMapOfTRI
+TP: Transfer_TransientProcess
+
+Returns
+-------
+None
+") Init;
+		void Init(const StepToTopoDS_DataMapOfTRI & Map, const opencascade::handle<Transfer_TransientProcess> & TP);
+
+		/****************** IsBound ******************/
+		/**** md5 signature: c5355b23030d16e694b385e8d1d07943 ****/
+		%feature("compactdefaultargs") IsBound;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TRI: StepShape_TopologicalRepresentationItem
+
+Returns
+-------
+bool
+") IsBound;
+		Standard_Boolean IsBound(const opencascade::handle<StepShape_TopologicalRepresentationItem> & TRI);
+
+		/****************** IsEdgeBound ******************/
+		/**** md5 signature: 757cdba30731313e735cd951daf5f42d ****/
+		%feature("compactdefaultargs") IsEdgeBound;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PP: StepToTopoDS_PointPair
+
+Returns
+-------
+bool
+") IsEdgeBound;
+		Standard_Boolean IsEdgeBound(const StepToTopoDS_PointPair & PP);
+
+		/****************** IsVertexBound ******************/
+		/**** md5 signature: 4e0a89f426cdea92ba4121657ac5c75f ****/
+		%feature("compactdefaultargs") IsVertexBound;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PG: StepGeom_CartesianPoint
+
+Returns
+-------
+bool
+") IsVertexBound;
+		Standard_Boolean IsVertexBound(const opencascade::handle<StepGeom_CartesianPoint> & PG);
+
+		/****************** TransientProcess ******************/
+		/**** md5 signature: cda5aa33365159e82c6213003de44419 ****/
+		%feature("compactdefaultargs") TransientProcess;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Transfer_TransientProcess>
+") TransientProcess;
+		opencascade::handle<Transfer_TransientProcess> TransientProcess();
+
+};
+
+
+%extend StepToTopoDS_Tool {
 	%pythoncode {
 	__repr__ = _dumps_object
 	}

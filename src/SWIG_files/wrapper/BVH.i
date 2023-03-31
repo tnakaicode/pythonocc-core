@@ -691,6 +691,10 @@ class BVH_Geometry:
 	pass
 
 @classnotwrapped
+class BVH_IndexedBoxSet:
+	pass
+
+@classnotwrapped
 class BVH_LinearBuilder:
 	pass
 

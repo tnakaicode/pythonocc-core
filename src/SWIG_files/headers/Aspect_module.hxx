@@ -71,6 +71,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Aspect_Units.hxx>
 #include<Aspect_VKey.hxx>
 #include<Aspect_VKeyFlags.hxx>
+#include<Aspect_VKeySet.hxx>
 #include<Aspect_WidthOfLine.hxx>
 #include<Aspect_Window.hxx>
 #include<Aspect_WindowDefinitionError.hxx>

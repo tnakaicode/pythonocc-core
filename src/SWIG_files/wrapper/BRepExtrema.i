@@ -1604,6 +1604,176 @@ dist: float
 /***************************************
 * class BRepExtrema_ProximityValueTool *
 ***************************************/
+class BRepExtrema_ProximityValueTool {
+	public:
+typedef typename BRepExtrema_ProximityDistTool::ProxPnt_Status ProxPnt_Status;
+		/****************** BRepExtrema_ProximityValueTool ******************/
+		/**** md5 signature: f01190ce189b90d5b9278fbee66731a1 ****/
+		%feature("compactdefaultargs") BRepExtrema_ProximityValueTool;
+		%feature("autodoc", "Creates new unitialized proximity tool.
+
+Returns
+-------
+None
+") BRepExtrema_ProximityValueTool;
+		 BRepExtrema_ProximityValueTool();
+
+		/****************** BRepExtrema_ProximityValueTool ******************/
+		/**** md5 signature: 457895b0f954d4aa93c3b2011e47f0e1 ****/
+		%feature("compactdefaultargs") BRepExtrema_ProximityValueTool;
+		%feature("autodoc", "Creates new proximity tool for the given element sets.
+
+Parameters
+----------
+theSet1: BRepExtrema_TriangleSet
+theSet2: BRepExtrema_TriangleSet
+theShapeList1: BRepExtrema_ShapeList
+theShapeList2: BRepExtrema_ShapeList
+
+Returns
+-------
+None
+") BRepExtrema_ProximityValueTool;
+		 BRepExtrema_ProximityValueTool(const opencascade::handle<BRepExtrema_TriangleSet> & theSet1, const opencascade::handle<BRepExtrema_TriangleSet> & theSet2, const BRepExtrema_ShapeList & theShapeList1, const BRepExtrema_ShapeList & theShapeList2);
+
+		/****************** Distance ******************/
+		/**** md5 signature: d47317206a0fb34e540004324dbfafd8 ****/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Returns the computed distance.
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance();
+
+		/****************** IsDone ******************/
+		/**** md5 signature: e385477ab1bec806154173d4a550fd68 ****/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Is proximity test completed?.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
+
+		/****************** LoadShapeLists ******************/
+		/**** md5 signature: 2ec9bfacd5c06102fdebe80e35402ca0 ****/
+		%feature("compactdefaultargs") LoadShapeLists;
+		%feature("autodoc", "Loads the given list of subshapes into the proximity tool.
+
+Parameters
+----------
+theShapeList1: BRepExtrema_ShapeList
+theShapeList2: BRepExtrema_ShapeList
+
+Returns
+-------
+None
+") LoadShapeLists;
+		void LoadShapeLists(const BRepExtrema_ShapeList & theShapeList1, const BRepExtrema_ShapeList & theShapeList2);
+
+		/****************** LoadTriangleSets ******************/
+		/**** md5 signature: 3a94a7860b973acbc6838bfe75b5b812 ****/
+		%feature("compactdefaultargs") LoadTriangleSets;
+		%feature("autodoc", "Loads the given element sets into the proximity tool.
+
+Parameters
+----------
+theSet1: Handle(BRepExtrema_TriangleSet)
+theSet2: Handle(BRepExtrema_TriangleSet)
+
+Returns
+-------
+None
+") LoadTriangleSets;
+		void LoadTriangleSets(const Handle(BRepExtrema_TriangleSet) & theSet1, const Handle(BRepExtrema_TriangleSet) & theSet2);
+
+		/****************** MarkDirty ******************/
+		/**** md5 signature: bd3f3e7de1b3b6a0c1da3082319fae2e ****/
+		%feature("compactdefaultargs") MarkDirty;
+		%feature("autodoc", "Marks test results as outdated.
+
+Returns
+-------
+None
+") MarkDirty;
+		void MarkDirty();
+
+		/****************** Perform ******************/
+		/**** md5 signature: c2c8700606b770cff797eb33824bf0aa ****/
+		%feature("compactdefaultargs") Perform;
+		%feature("autodoc", "Performs the computation of the proximity value.
+
+Parameters
+----------
+
+Returns
+-------
+theTolerance: float
+") Perform;
+		void Perform(Standard_Real &OutValue);
+
+		/****************** ProximityPoints ******************/
+		/**** md5 signature: 4ddc607867ad4f349b192d8bb4196f92 ****/
+		%feature("compactdefaultargs") ProximityPoints;
+		%feature("autodoc", "Returns points on triangles sets, which provide the proximity distance.
+
+Parameters
+----------
+thePoint1: gp_Pnt
+thePoint2: gp_Pnt
+
+Returns
+-------
+None
+") ProximityPoints;
+		void ProximityPoints(gp_Pnt & thePoint1, gp_Pnt & thePoint2);
+
+		/****************** ProximityPointsStatus ******************/
+		/**** md5 signature: cbb67aeda5a68bd79cbb58089638d3f8 ****/
+		%feature("compactdefaultargs") ProximityPointsStatus;
+		%feature("autodoc", "Returns status of points on triangles sets, which provide the proximity distance.
+
+Parameters
+----------
+thePointStatus1: ProxPnt_Status
+thePointStatus2: ProxPnt_Status
+
+Returns
+-------
+None
+") ProximityPointsStatus;
+		void ProximityPointsStatus(ProxPnt_Status & thePointStatus1, ProxPnt_Status & thePointStatus2);
+
+		/****************** SetNbSamplePoints ******************/
+		/**** md5 signature: 200898431f5ab55f6d0477df1f50c3b9 ****/
+		%feature("compactdefaultargs") SetNbSamplePoints;
+		%feature("autodoc", "Sets number of sample points used for proximity calculation for each shape. if number is less or equal zero, all triangulation nodes are used.
+
+Parameters
+----------
+theSamples1: int,optional
+	default value is 0
+theSamples2: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") SetNbSamplePoints;
+		void SetNbSamplePoints(const Standard_Integer theSamples1 = 0, const Standard_Integer theSamples2 = 0);
+
+};
+
+
+%extend BRepExtrema_ProximityValueTool {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
 /***********************************
 * class BRepExtrema_ShapeProximity *
 ***********************************/
@@ -2456,10 +2626,6 @@ float
 %pythoncode {
 @classnotwrapped
 class BRepExtrema_OverlapTool:
-	pass
-
-@classnotwrapped
-class BRepExtrema_ProximityValueTool:
 	pass
 
 }

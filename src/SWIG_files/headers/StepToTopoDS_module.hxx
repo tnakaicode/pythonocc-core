@@ -40,6 +40,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<StepToTopoDS_PointPairHasher.hxx>
 #include<StepToTopoDS_PointVertexMap.hxx>
 #include<StepToTopoDS_Root.hxx>
+#include<StepToTopoDS_Tool.hxx>
 #include<StepToTopoDS_TranslateCompositeCurve.hxx>
 #include<StepToTopoDS_TranslateCurveBoundedSurface.hxx>
 #include<StepToTopoDS_TranslateEdge.hxx>

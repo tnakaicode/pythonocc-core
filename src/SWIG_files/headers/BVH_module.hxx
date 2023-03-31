@@ -30,6 +30,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BVH_Distance.hxx>
 #include<BVH_DistanceField.hxx>
 #include<BVH_Geometry.hxx>
+#include<BVH_IndexedBoxSet.hxx>
 #include<BVH_LinearBuilder.hxx>
 #include<BVH_Object.hxx>
 #include<BVH_ObjectSet.hxx>

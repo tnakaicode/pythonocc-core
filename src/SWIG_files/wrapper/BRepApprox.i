@@ -50,8 +50,10 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_brepapprox.html"
 #include<IntSurf_module.hxx>
 #include<TColStd_module.hxx>
 #include<BRepAdaptor_module.hxx>
-#include<IntImp_module.hxx>
 #include<gp_module.hxx>
+#include<Adaptor3d_module.hxx>
+#include<GeomAbs_module.hxx>
+#include<IntImp_module.hxx>
 #include<ApproxInt_module.hxx>
 #include<TColgp_module.hxx>
 #include<TopLoc_module.hxx>
@@ -79,8 +81,10 @@ https://www.opencascade.com/doc/occt-7.6.0/refman/html/package_brepapprox.html"
 %import IntSurf.i
 %import TColStd.i
 %import BRepAdaptor.i
-%import IntImp.i
 %import gp.i
+%import Adaptor3d.i
+%import GeomAbs.i
+%import IntImp.i
 %import ApproxInt.i
 %import TColgp.i
 
@@ -2617,6 +2621,657 @@ bool
 	@methodnotwrapped
 	def Error(self):
 		pass
+	}
+};
+
+/*******************************
+* class BRepApprox_SurfaceTool *
+*******************************/
+class BRepApprox_SurfaceTool {
+	public:
+		/****************** AxeOfRevolution ******************/
+		/**** md5 signature: e74ddc82b514035b2ffd7f88d2b60038 ****/
+		%feature("compactdefaultargs") AxeOfRevolution;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Ax1
+") AxeOfRevolution;
+		static gp_Ax1 AxeOfRevolution(const BRepAdaptor_Surface & S);
+
+		/****************** BSpline ******************/
+		/**** md5 signature: 8823cc18f3c251d3ffceeccbb2153a6e ****/
+		%feature("compactdefaultargs") BSpline;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
+") BSpline;
+		static opencascade::handle<Geom_BSplineSurface> BSpline(const BRepAdaptor_Surface & S);
+
+		/****************** BasisCurve ******************/
+		/**** md5 signature: e478db15ad97826612a335af3f6203d4 ****/
+		%feature("compactdefaultargs") BasisCurve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+opencascade::handle<Adaptor3d_Curve>
+") BasisCurve;
+		static opencascade::handle<Adaptor3d_Curve> BasisCurve(const BRepAdaptor_Surface & S);
+
+		/****************** Bezier ******************/
+		/**** md5 signature: 62f42b64dcf4c9aa24777b580455fde2 ****/
+		%feature("compactdefaultargs") Bezier;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+opencascade::handle<Geom_BezierSurface>
+") Bezier;
+		static opencascade::handle<Geom_BezierSurface> Bezier(const BRepAdaptor_Surface & S);
+
+		/****************** Cone ******************/
+		/**** md5 signature: 60e200b1f39d35dabc589ba60baa4aca ****/
+		%feature("compactdefaultargs") Cone;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Cone
+") Cone;
+		static gp_Cone Cone(const BRepAdaptor_Surface & S);
+
+		/****************** Cylinder ******************/
+		/**** md5 signature: bfaaa184a2452948fdd6ce69925769c3 ****/
+		%feature("compactdefaultargs") Cylinder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Cylinder
+") Cylinder;
+		static gp_Cylinder Cylinder(const BRepAdaptor_Surface & S);
+
+		/****************** D0 ******************/
+		/**** md5 signature: f6727a78f574aa9b66c39e1e96c68942 ****/
+		%feature("compactdefaultargs") D0;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u: float
+v: float
+P: gp_Pnt
+
+Returns
+-------
+void
+") D0;
+		static void D0(const BRepAdaptor_Surface & S, const Standard_Real u, const Standard_Real v, gp_Pnt & P);
+
+		/****************** D1 ******************/
+		/**** md5 signature: 592559bc5aad46ba1e187df1e73ad838 ****/
+		%feature("compactdefaultargs") D1;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u: float
+v: float
+P: gp_Pnt
+D1u: gp_Vec
+D1v: gp_Vec
+
+Returns
+-------
+void
+") D1;
+		static void D1(const BRepAdaptor_Surface & S, const Standard_Real u, const Standard_Real v, gp_Pnt & P, gp_Vec & D1u, gp_Vec & D1v);
+
+		/****************** D2 ******************/
+		/**** md5 signature: a71fc6f6361481ce024985ac00c43f2e ****/
+		%feature("compactdefaultargs") D2;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u: float
+v: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+D2U: gp_Vec
+D2V: gp_Vec
+D2UV: gp_Vec
+
+Returns
+-------
+void
+") D2;
+		static void D2(const BRepAdaptor_Surface & S, const Standard_Real u, const Standard_Real v, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
+
+		/****************** D3 ******************/
+		/**** md5 signature: 93d118ed99ecd1fad00e03761b8d27f7 ****/
+		%feature("compactdefaultargs") D3;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u: float
+v: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+D2U: gp_Vec
+D2V: gp_Vec
+D2UV: gp_Vec
+D3U: gp_Vec
+D3V: gp_Vec
+D3UUV: gp_Vec
+D3UVV: gp_Vec
+
+Returns
+-------
+void
+") D3;
+		static void D3(const BRepAdaptor_Surface & S, const Standard_Real u, const Standard_Real v, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
+
+		/****************** DN ******************/
+		/**** md5 signature: d1b963467520172ef209df0b307bcadc ****/
+		%feature("compactdefaultargs") DN;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u: float
+v: float
+Nu: int
+Nv: int
+
+Returns
+-------
+gp_Vec
+") DN;
+		static gp_Vec DN(const BRepAdaptor_Surface & S, const Standard_Real u, const Standard_Real v, const Standard_Integer Nu, const Standard_Integer Nv);
+
+		/****************** Direction ******************/
+		/**** md5 signature: fd02ced937782132e0e4554d6bbe3252 ****/
+		%feature("compactdefaultargs") Direction;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Dir
+") Direction;
+		static gp_Dir Direction(const BRepAdaptor_Surface & S);
+
+		/****************** FirstUParameter ******************/
+		/**** md5 signature: 215eefdde5b80a72e0c8d839d2b57409 ****/
+		%feature("compactdefaultargs") FirstUParameter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+float
+") FirstUParameter;
+		static Standard_Real FirstUParameter(const BRepAdaptor_Surface & S);
+
+		/****************** FirstVParameter ******************/
+		/**** md5 signature: 1f862d65413056d08b9c3704b06a0163 ****/
+		%feature("compactdefaultargs") FirstVParameter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+float
+") FirstVParameter;
+		static Standard_Real FirstVParameter(const BRepAdaptor_Surface & S);
+
+		/****************** GetType ******************/
+		/**** md5 signature: a6cd815bc857179031573432757ec63b ****/
+		%feature("compactdefaultargs") GetType;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+GeomAbs_SurfaceType
+") GetType;
+		static GeomAbs_SurfaceType GetType(const BRepAdaptor_Surface & S);
+
+		/****************** IsUClosed ******************/
+		/**** md5 signature: 6352112928c9c27caadc94909335e74d ****/
+		%feature("compactdefaultargs") IsUClosed;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+bool
+") IsUClosed;
+		static Standard_Boolean IsUClosed(const BRepAdaptor_Surface & S);
+
+		/****************** IsUPeriodic ******************/
+		/**** md5 signature: f5b175e4f6dd57d65b7aa72c2941467e ****/
+		%feature("compactdefaultargs") IsUPeriodic;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+bool
+") IsUPeriodic;
+		static Standard_Boolean IsUPeriodic(const BRepAdaptor_Surface & S);
+
+		/****************** IsVClosed ******************/
+		/**** md5 signature: d9c119797cf9f8b013e890abad3502ab ****/
+		%feature("compactdefaultargs") IsVClosed;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+bool
+") IsVClosed;
+		static Standard_Boolean IsVClosed(const BRepAdaptor_Surface & S);
+
+		/****************** IsVPeriodic ******************/
+		/**** md5 signature: 1e0af70e4e59762e37b38845553d100d ****/
+		%feature("compactdefaultargs") IsVPeriodic;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+bool
+") IsVPeriodic;
+		static Standard_Boolean IsVPeriodic(const BRepAdaptor_Surface & S);
+
+		/****************** LastUParameter ******************/
+		/**** md5 signature: 29020e982d52766d727d8ac302b0c02e ****/
+		%feature("compactdefaultargs") LastUParameter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+float
+") LastUParameter;
+		static Standard_Real LastUParameter(const BRepAdaptor_Surface & S);
+
+		/****************** LastVParameter ******************/
+		/**** md5 signature: c3df7f5e21991452c33bf232ce7d9562 ****/
+		%feature("compactdefaultargs") LastVParameter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+float
+") LastVParameter;
+		static Standard_Real LastVParameter(const BRepAdaptor_Surface & S);
+
+		/****************** NbSamplesU ******************/
+		/**** md5 signature: 9164ce7f9a16f7530e1e9750e637940d ****/
+		%feature("compactdefaultargs") NbSamplesU;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+int
+") NbSamplesU;
+		static Standard_Integer NbSamplesU(const BRepAdaptor_Surface & S);
+
+		/****************** NbSamplesU ******************/
+		/**** md5 signature: 8e4fac5817077b00af0164eaa2215b8b ****/
+		%feature("compactdefaultargs") NbSamplesU;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u1: float
+u2: float
+
+Returns
+-------
+int
+") NbSamplesU;
+		static Standard_Integer NbSamplesU(const BRepAdaptor_Surface & S, const Standard_Real u1, const Standard_Real u2);
+
+		/****************** NbSamplesV ******************/
+		/**** md5 signature: 86d363ec0f4f7e93676b703a15088c2d ****/
+		%feature("compactdefaultargs") NbSamplesV;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+int
+") NbSamplesV;
+		static Standard_Integer NbSamplesV(const BRepAdaptor_Surface & S);
+
+		/****************** NbSamplesV ******************/
+		/**** md5 signature: 54516aa4669245c8ce78f61e9ac5d717 ****/
+		%feature("compactdefaultargs") NbSamplesV;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+v1: float
+v2: float
+
+Returns
+-------
+int
+") NbSamplesV;
+		static Standard_Integer NbSamplesV(const BRepAdaptor_Surface & S, const Standard_Real v1, const Standard_Real v2);
+
+		/****************** NbUIntervals ******************/
+		/**** md5 signature: b5e43427d66fa95d633f0ee4dac920ea ****/
+		%feature("compactdefaultargs") NbUIntervals;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+Sh: GeomAbs_Shape
+
+Returns
+-------
+int
+") NbUIntervals;
+		static Standard_Integer NbUIntervals(const BRepAdaptor_Surface & S, const GeomAbs_Shape Sh);
+
+		/****************** NbVIntervals ******************/
+		/**** md5 signature: 71031702e09c8708c0d4c82d81aa774c ****/
+		%feature("compactdefaultargs") NbVIntervals;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+Sh: GeomAbs_Shape
+
+Returns
+-------
+int
+") NbVIntervals;
+		static Standard_Integer NbVIntervals(const BRepAdaptor_Surface & S, const GeomAbs_Shape Sh);
+
+		/****************** Plane ******************/
+		/**** md5 signature: d0190f93fe1c317fbab00796fd96a8dc ****/
+		%feature("compactdefaultargs") Plane;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Pln
+") Plane;
+		static gp_Pln Plane(const BRepAdaptor_Surface & S);
+
+		/****************** Sphere ******************/
+		/**** md5 signature: 7ea900cd4234a848efc1dc920aae1ebf ****/
+		%feature("compactdefaultargs") Sphere;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Sphere
+") Sphere;
+		static gp_Sphere Sphere(const BRepAdaptor_Surface & S);
+
+		/****************** Torus ******************/
+		/**** md5 signature: 2b2cfc6e29aa0d6a184ce0e0783a8465 ****/
+		%feature("compactdefaultargs") Torus;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+gp_Torus
+") Torus;
+		static gp_Torus Torus(const BRepAdaptor_Surface & S);
+
+		/****************** UIntervals ******************/
+		/**** md5 signature: fbe812da680c850950d7ed23300ce95c ****/
+		%feature("compactdefaultargs") UIntervals;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+T: TColStd_Array1OfReal
+Sh: GeomAbs_Shape
+
+Returns
+-------
+void
+") UIntervals;
+		static void UIntervals(const BRepAdaptor_Surface & S, TColStd_Array1OfReal & T, const GeomAbs_Shape Sh);
+
+		/****************** UPeriod ******************/
+		/**** md5 signature: 1426e6a3ff241c573f4f523c672fd425 ****/
+		%feature("compactdefaultargs") UPeriod;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+float
+") UPeriod;
+		static Standard_Real UPeriod(const BRepAdaptor_Surface & S);
+
+		/****************** UResolution ******************/
+		/**** md5 signature: d2dc7ef7ab08f98e32e14a9c42fc67d4 ****/
+		%feature("compactdefaultargs") UResolution;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+R3d: float
+
+Returns
+-------
+float
+") UResolution;
+		static Standard_Real UResolution(const BRepAdaptor_Surface & S, const Standard_Real R3d);
+
+		/****************** UTrim ******************/
+		/**** md5 signature: bdf57f0192f6ba6a046f6fd4b1f37b23 ****/
+		%feature("compactdefaultargs") UTrim;
+		%feature("autodoc", "If <first> >= <last>.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_Surface>
+") UTrim;
+		static opencascade::handle<Adaptor3d_Surface> UTrim(const BRepAdaptor_Surface & S, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
+
+		/****************** VIntervals ******************/
+		/**** md5 signature: f8f1b75e1a214b4246fee76165c9ced2 ****/
+		%feature("compactdefaultargs") VIntervals;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+T: TColStd_Array1OfReal
+Sh: GeomAbs_Shape
+
+Returns
+-------
+void
+") VIntervals;
+		static void VIntervals(const BRepAdaptor_Surface & S, TColStd_Array1OfReal & T, const GeomAbs_Shape Sh);
+
+		/****************** VPeriod ******************/
+		/**** md5 signature: 76e1f053e14f3e5f4a44e609df017849 ****/
+		%feature("compactdefaultargs") VPeriod;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+float
+") VPeriod;
+		static Standard_Real VPeriod(const BRepAdaptor_Surface & S);
+
+		/****************** VResolution ******************/
+		/**** md5 signature: 774befbab33949449d55bbb78eb82b14 ****/
+		%feature("compactdefaultargs") VResolution;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+R3d: float
+
+Returns
+-------
+float
+") VResolution;
+		static Standard_Real VResolution(const BRepAdaptor_Surface & S, const Standard_Real R3d);
+
+		/****************** VTrim ******************/
+		/**** md5 signature: 5d6a8558cceb08dff23363d72161ae0a ****/
+		%feature("compactdefaultargs") VTrim;
+		%feature("autodoc", "If <first> >= <last>.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_Surface>
+") VTrim;
+		static opencascade::handle<Adaptor3d_Surface> VTrim(const BRepAdaptor_Surface & S, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
+
+		/****************** Value ******************/
+		/**** md5 signature: 99956c15b75117616c431d8c98ec8815 ****/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: BRepAdaptor_Surface
+u: float
+v: float
+
+Returns
+-------
+gp_Pnt
+") Value;
+		static gp_Pnt Value(const BRepAdaptor_Surface & S, const Standard_Real u, const Standard_Real v);
+
+};
+
+
+%extend BRepApprox_SurfaceTool {
+	%pythoncode {
+	__repr__ = _dumps_object
 	}
 };
 
