@@ -2,13 +2,13 @@
 ############################
 Running pythonocc-generator.
 ############################
-git revision : e226024
+git revision : 4afa73a
 
 operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-31 16:01:42.599595
+date : 2023-03-31 16:58:57.900354
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -3599,7 +3599,7 @@ date : 2023-03-31 16:01:42.599595
 [WARNI]      [TypeHint] Skipping type double * *, should contain _
 [INFO ]  ## Processing module IVtkTools
 [INFO ]  Class: IVtkTools_ShapeDataSource
-[WARNI]      [TypeHint] param name missing or '&', skip method type hint
+[INFO ]      skipped method IVtkTools_ShapeDataSource::99fc4a1b5484ef6bf8c2e7e9c52402ee
 [WARNI]      [TypeHint] Skip type IVtkOCC_Shape::Handle, because of trailing :
 [WARNI]      [TypeHint] Skip type IVtkOCC_Shape::Handle, because of trailing :
 [WARNI]      [TypeHint] Skip type IVtkOCC_Shape::Handle, because of trailing :
@@ -9697,8 +9697,8 @@ date : 2023-03-31 16:01:42.599595
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 253.96s
+SWIG interface file generation completed in 302.60s
 #################################################
 
 [INFO ]  Number of classes: 5168
-[INFO ]  Number of methods: 50743
+[INFO ]  Number of methods: 50742

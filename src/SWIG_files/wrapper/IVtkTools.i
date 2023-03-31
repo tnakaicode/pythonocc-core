@@ -83,22 +83,6 @@ from OCC.Core.Exception import *
 %ignore IVtkTools_ShapeDataSource::~IVtkTools_ShapeDataSource();
 class IVtkTools_ShapeDataSource : public vtkPolyDataAlgorithm {
 	public:
-		/****************** vtkTypeMacro ******************/
-		/**** md5 signature: 99fc4a1b5484ef6bf8c2e7e9c52402ee ****/
-		%feature("compactdefaultargs") vtkTypeMacro;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-: IVtkTools_ShapeDataSource
-New(: vtkPolyDataAlgorithm) static IVtkTools_ShapeDataSource *
-
-Returns
--------
-None
-") vtkTypeMacro;
-		 vtkTypeMacro(IVtkTools_ShapeDataSource , vtkPolyDataAlgorithm) static IVtkTools_ShapeDataSource * New();
-
 		/****************** Contains ******************/
 		/**** md5 signature: 05ace343f570281f10fc6d294aacf6d3 ****/
 		%feature("compactdefaultargs") Contains;
@@ -190,6 +174,10 @@ vtkSmartPointer<vtkIdTypeArray>
 %extend IVtkTools_ShapeDataSource {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def vtkTypeMacro(self):
+		pass
 	}
 };
 
