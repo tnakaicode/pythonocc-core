@@ -2630,6 +2630,14 @@ opencascade::handle<StepVisual_StyledItem>
 %extend STEPConstruct_Styles {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def NbRootStyles(self):
+		pass
+
+	@methodnotwrapped
+	def RootStyle(self):
+		pass
 	}
 };
 

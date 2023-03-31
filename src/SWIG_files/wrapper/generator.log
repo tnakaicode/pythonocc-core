@@ -2,13 +2,13 @@
 ############################
 Running pythonocc-generator.
 ############################
-git revision : 5009a4a
+git revision : e226024
 
 operating system : Windows 64bit 10
 
 occt version targeted : 7.7.0
 
-date : 2023-03-28 13:07:45.114367
+date : 2023-03-31 09:56:26.280081
 ############################
 
 [INFO ]  Processing toolkit TKBO ===
@@ -498,7 +498,6 @@ date : 2023-03-28 13:07:45.114367
 [INFO ]  Class: BRepAlgo_NormalProjection
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  ## Processing module BRepFill
-[INFO ]  Enum: BRepFill_ThruSectionErrorStatus
 [INFO ]  Enum: BRepFill_TransitionStyle
 [INFO ]  Enum: BRepFill_TypeOfContact
 [WARNI]      [TypeHint] Skipping type opencascade::handle, should contain _
@@ -1021,7 +1020,6 @@ date : 2023-03-28 13:07:45.114367
 [INFO ]  Class: BRepBlend_SurfRstConstRad
 [INFO ]  Class: BRepBlend_SurfRstEvolRad
 [INFO ]  Class: BRepBlend_SurfRstLineBuilder
-[INFO ]  Class: BRepBlend_Walking
 [INFO ]  Class: BRepBlend_AppFunc
 [INFO ]  Class: BRepBlend_AppFuncRst
 [INFO ]  Class: BRepBlend_AppFuncRstRst
@@ -1781,6 +1779,7 @@ date : 2023-03-28 13:07:45.114367
 [INFO ]  Class: GeomInt_IntSS
 [INFO ]      skipped method GeomInt_IntSS::95311f9e4da165d401fd5e6fa30c8287
 [INFO ]      skipped method GeomInt_IntSS::3738a5a63be6aef263f49fab4fcc7fe9
+[INFO ]      skipped method GeomInt_IntSS::2c2bdb53423075c70323712785098b12
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: GeomInt_LineConstructor
 [INFO ]  Class: GeomInt_LineTool
@@ -7772,10 +7771,6 @@ date : 2023-03-28 13:07:45.114367
 [INFO ]  Class: BRepExtrema_ExtPF
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [INFO ]  Class: BRepExtrema_Poly
-[INFO ]  Class: BRepExtrema_ProximityValueTool
-[INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
-[WARNI]      [TypeHint] Skipping unknown type, Handle(BRepExtrema not in module list
-[WARNI]      [TypeHint] Skipping unknown type, ProxPnt not in module list
 [INFO ]  Class: BRepExtrema_ShapeProximity
 [INFO ]      [TypeHint] More than 1 constructor, @overload decorator needed.
 [WARNI]      [TypeHint] Skipping unknown type, ProxPnt not in module list
@@ -8331,6 +8326,8 @@ date : 2023-03-28 13:07:45.114367
 [INFO ]  Class: StdPrs_Plane
 [INFO ]  Class: StdPrs_PoleCurve
 [INFO ]  Class: StdPrs_ShadedShape
+[INFO ]      skipped method StdPrs_ShadedShape::4361c97ebfd2d178620c977d5eabb386
+[INFO ]      skipped method StdPrs_ShadedShape::c21dc028b4eb82bb3707a6e95d6e5c3b
 [INFO ]  Class: StdPrs_ShadedSurface
 [INFO ]  Class: StdPrs_ShapeTool
 [INFO ]  Class: StdPrs_ToolPoint
@@ -9687,8 +9684,8 @@ date : 2023-03-28 13:07:45.114367
 [INFO ]  Class: UnitsMethods
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 184.60s
+SWIG interface file generation completed in 268.58s
 #################################################
 
-[INFO ]  Number of classes: 5162
-[INFO ]  Number of methods: 50602
+[INFO ]  Number of classes: 5160
+[INFO ]  Number of methods: 50571

@@ -8759,6 +8759,14 @@ None
 %extend XCAFDoc_ShapeTool {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def IsEqual(self):
+		pass
+
+	@methodnotwrapped
+	def IsSame(self):
+		pass
 	}
 };
 

@@ -3203,6 +3203,10 @@ void
 	@methodnotwrapped
 	def DN(self):
 		pass
+
+	@methodnotwrapped
+	def Intervals(self):
+		pass
 	}
 };
 
